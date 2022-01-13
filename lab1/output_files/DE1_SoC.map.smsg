@@ -1,0 +1,3 @@
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10034): Output port "ReadData1" at regfile.sv(7) has no driver File: D:/EE/ee469labs/lab1/regfile.sv Line: 7
+Warning (10034): Output port "ReadData2" at regfile.sv(7) has no driver File: D:/EE/ee469labs/lab1/regfile.sv Line: 7

@@ -1,0 +1,447 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/EE/ee469labs/lab1
+vdecoder1to2
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1641967069
+!i10b 1
+!s100 JO71kj_d4hF<0YTPW`^1z2
+ICJLCaCZCGZZCSK6AchogH2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 decoder1to2_sv_unit
+S1
+R0
+Z5 w1641965109
+Z6 8./decoder1to2.sv
+Z7 F./decoder1to2.sv
+L0 1
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1641967068.000000
+Z10 !s107 ./decoder1to2.sv|
+Z11 !s90 -reportprogress|300|./decoder1to2.sv|
+!i113 1
+Z12 tCvgOpt 0
+vdecoder1to2_teshbench
+R1
+Z13 !s110 1641963180
+!i10b 1
+!s100 1XINb7d=_W?bMi<VFonBK0
+IJFElIdiDWY>LP3MOEzPz82
+R3
+R4
+S1
+R0
+w1641962798
+R6
+R7
+Z14 L0 12
+R8
+r1
+!s85 0
+31
+Z15 !s108 1641963180.000000
+R10
+R11
+!i113 1
+R12
+vdecoder1to2_testbench
+R1
+R2
+!i10b 1
+!s100 NH38M96<aCFni?oSm29ZD2
+I6D0XP:hZ[a@@c1Ba;U4@=0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+R14
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vdecoder2to4
+R1
+R2
+!i10b 1
+!s100 >BD@DdeW:>Reel9gPdajW3
+Ic?:`PTCi[`<VeSGjhnMFG0
+R3
+Z16 !s105 decoder2to4_sv_unit
+S1
+R0
+Z17 w1641965770
+Z18 8./decoder2to4.sv
+Z19 F./decoder2to4.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z20 !s108 1641967069.000000
+Z21 !s107 ./decoder2to4.sv|
+Z22 !s90 -reportprogress|300|./decoder2to4.sv|
+!i113 1
+R12
+vdecoder2to4_teshbench
+R1
+R13
+!i10b 1
+!s100 ?`0U4KShPW4m;1GL:UX0N2
+Ib5n>H^5>8G64I^5im>KUG1
+R3
+R16
+S1
+R0
+w1641961756
+R18
+R19
+Z23 L0 11
+R8
+r1
+!s85 0
+31
+R15
+R21
+R22
+!i113 1
+R12
+vdecoder2to4_testbench
+R1
+R2
+!i10b 1
+!s100 <2DS6@egeoC3V`X@YCkXc2
+IZ5n1Fk;M0V3a^L2=KIAdM1
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+R23
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!i113 1
+R12
+vdecoder4to16
+R1
+R2
+!i10b 1
+!s100 e2>Kb@8QMn2;_igai1:<]3
+IWYhM?JES_@O18InQFl3W;3
+R3
+Z24 !s105 decoder4to16_sv_unit
+S1
+R0
+Z25 w1641965772
+Z26 8./decoder4to16.sv
+Z27 F./decoder4to16.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R20
+Z28 !s107 ./decoder4to16.sv|
+Z29 !s90 -reportprogress|300|./decoder4to16.sv|
+!i113 1
+R12
+vdecoder4to16_teshbench
+R1
+R13
+!i10b 1
+!s100 E?bN=h38;R=c1;9NfKa1Y3
+I`ba^ZHH53Y:<h587>gMX62
+R3
+R24
+S1
+R0
+w1641962825
+R26
+R27
+Z30 L0 16
+R8
+r1
+!s85 0
+31
+R15
+R28
+R29
+!i113 1
+R12
+vdecoder4to16_testbench
+R1
+R2
+!i10b 1
+!s100 8l]SUVK^hSB;bQIClaBV?0
+IAa^LP]jC^eJOhbn2:adcm1
+R3
+R24
+S1
+R0
+R25
+R26
+R27
+R30
+R8
+r1
+!s85 0
+31
+R20
+R28
+R29
+!i113 1
+R12
+vdecoder5to32
+R1
+R2
+!i10b 1
+!s100 ;ELehlik4R5bO9E^>hCT`2
+I>8KX[hKMm>m0;14bCWmaZ1
+R3
+Z31 !s105 decoder5to32_sv_unit
+S1
+R0
+Z32 w1641966942
+Z33 8./decoder5to32.sv
+Z34 F./decoder5to32.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R20
+Z35 !s107 ./decoder5to32.sv|
+Z36 !s90 -reportprogress|300|./decoder5to32.sv|
+!i113 1
+R12
+vdecoder5to32_teshbench
+R1
+R13
+!i10b 1
+!s100 4=YNd9F?_8Gkm@S95K?Vl0
+I6``QVJ8N[4hSCR]cEzP0`0
+R3
+R31
+S1
+R0
+w1641962824
+R33
+R34
+Z37 L0 15
+R8
+r1
+!s85 0
+31
+R15
+R35
+R36
+!i113 1
+R12
+vdecoder5to32_testbench
+R1
+R2
+!i10b 1
+!s100 i@1H8NI_FndQLGKSUYiL<3
+IBPRj^?Y_KWhTfRXQBPIYQ2
+R3
+R31
+S1
+R0
+R32
+R33
+R34
+R37
+R8
+r1
+!s85 0
+31
+R20
+R35
+R36
+!i113 1
+R12
+vmultipelxor16to1
+R1
+Z38 !s110 1641963760
+!i10b 1
+!s100 mPhPQmGS1Jh0Z^91I9zMk0
+Il>eZYaLUFdT^D_B[j90_E2
+R3
+Z39 !s105 multiplexor16to1_sv_unit
+S1
+R0
+w1641773358
+Z40 8./multiplexor16to1.sv
+Z41 F./multiplexor16to1.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z42 !s108 1641963760.000000
+Z43 !s107 ./multiplexor16to1.sv|
+Z44 !s90 -reportprogress|300|./multiplexor16to1.sv|
+!i113 1
+R12
+vmultipelxor32to1
+R1
+R38
+!i10b 1
+!s100 MlQm1WUcImc>ZNTVUW;K]3
+I>;_^g1zmWoYne]@7DM_jY0
+R3
+Z45 !s105 multiplexor32to1_sv_unit
+S1
+R0
+w1641857688
+Z46 8./multiplexor32to1.sv
+Z47 F./multiplexor32to1.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R42
+Z48 !s107 ./multiplexor32to1.sv|
+Z49 !s90 -reportprogress|300|./multiplexor32to1.sv|
+!i113 1
+R12
+vmultipelxor4to1
+R1
+R38
+!i10b 1
+!s100 Tgl=IiA]ePJ:?f4EjdhXT2
+ISm[We_;JT:T?MK;gC_XBf3
+R3
+Z50 !s105 multiplexor4to1_sv_unit
+S1
+R0
+w1641773301
+Z51 8./multiplexor4to1.sv
+Z52 F./multiplexor4to1.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R42
+Z53 !s107 ./multiplexor4to1.sv|
+Z54 !s90 -reportprogress|300|./multiplexor4to1.sv|
+!i113 1
+R12
+vmultiplexor16to1
+R1
+Z55 !s110 1641967068
+!i10b 1
+!s100 9Sfe5jLi297hSYPhYaYSj3
+IaX96@[iU[>872M>87eC<53
+R3
+R39
+S1
+R0
+w1641964555
+R40
+R41
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R43
+R44
+!i113 1
+R12
+vmultiplexor2to1
+R1
+R55
+!i10b 1
+!s100 :?cn0Ece?K?lTUdVj7aF50
+I[dHF`=WGZnoGga8?QCIlE1
+R3
+!s105 multiplexor2to1_sv_unit
+S1
+R0
+w1641857975
+8./multiplexor2to1.sv
+F./multiplexor2to1.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 ./multiplexor2to1.sv|
+!s90 -reportprogress|300|./multiplexor2to1.sv|
+!i113 1
+R12
+vmultiplexor32to1
+R1
+R55
+!i10b 1
+!s100 YR1e1em4QJfbHR7HJX72;1
+I9XOH?fM>ZVC[>_=O;h2^G1
+R3
+R45
+S1
+R0
+w1641964584
+R46
+R47
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R48
+R49
+!i113 1
+R12
+vmultiplexor4to1
+R1
+R55
+!i10b 1
+!s100 dlEi=FX<^::1nc0G=V]^^2
+I?=KRFF]m^EjJdfi@:BhEf3
+R3
+R50
+S1
+R0
+w1641964554
+R51
+R52
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R53
+R54
+!i113 1
+R12

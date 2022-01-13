@@ -1,0 +1,10 @@
+module multiplexor2to1 (in, out, select) ;
+	input logic select;
+	input logic [1:0] in;
+	output logic out;
+	
+	logic invertedSelect;
+	not (invertedSelect, select);
+	
+
+endmodule
