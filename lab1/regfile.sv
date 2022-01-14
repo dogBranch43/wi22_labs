@@ -31,11 +31,11 @@ module regfile(ReadData1, ReadData2, WriteData,
 	genvar i,j;
    generate 
        for (i = 0; i < 32; i++) begin : register
-           for  (j = 0; j < 64; j++) begin : multiplexo
+           for  (j = 0; j < 64; j++) begin : multiplexor
 					logic [1:0] temp;
 					logic temp2;
 					assign temp[1] = registers[i][j];	
-					muxiplexor2to1 m1(.in(temp), .out(temp2), .select(enableDecoders[i]));
+					multiplexor2to1 m1(.in(temp), .out(temp2), .select(enableDecoders[i]));
                D_FF dff1(.q(temp2), .d(temp[0]), .reset, .clk);
            end
        end
