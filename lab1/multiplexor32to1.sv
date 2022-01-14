@@ -1,6 +1,6 @@
 module multiplexor32to1(in, out, select);
 	input logic [31:0] in;
-	input logic select[4:0];
+	input logic [4:0] select;
 	output logic out;
 	
 	logic[1:0] outputs;

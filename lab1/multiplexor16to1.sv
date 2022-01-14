@@ -1,6 +1,6 @@
 module multiplexor16to1(in, out, select);
 	input logic [15:0] in;
-	input logic select[3:0];
+	input logic [3:0] select;
 	output logic out;
 	
 	

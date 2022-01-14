@@ -5,9 +5,9 @@ module multiplexor4to1(in, out, select);
 	
 	logic [1:0] outputs;
 	
-	mulitplexor2to1 m2 (in[1:0] , outputs[0], select[0]);
-	mulitplexor2to1 m1 (in[3:2], outputs[1], select[0]);
-	mulitplexor2to1 m3 (outputs, out, select[1]);
+	multiplexor2to1 m2 (in[1:0] , outputs[0], select[0]);
+	multiplexor2to1 m1 (in[3:2], outputs[1], select[0]);
+	multiplexor2to1 m3 (outputs, out, select[1]);
 	
 endmodule
 
