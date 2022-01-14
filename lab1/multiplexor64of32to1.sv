@@ -1,3 +1,4 @@
+`timescale 1ps / 1ps
 module multiplexor64of32to1(in, readData1, readData2, readRegister1, readRegister2) ;
 	input logic [4:0] readRegister1, readRegister2;
 	input logic [31:0][63:0] in;

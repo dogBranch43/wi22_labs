@@ -1,3 +1,4 @@
+`timescale 1ps / 1ps
 module regfile(ReadData1, ReadData2, WriteData, 
 					 ReadRegister1, ReadRegister2, WriteRegister,
 					 RegWrite, clk) ;
@@ -36,7 +37,7 @@ module regfile(ReadData1, ReadData2, WriteData,
 					logic temp2;
 					assign temp[1] = registers[i][j];	
 					multiplexor2to1 m1(.in(temp), .out(temp2), .select(enableDecoders[i]));
-               D_FF dff1(.q(temp2), .d(temp[0]), .reset, .clk);
+               D_FF dff1 (.q(temp2), .d(temp[0]), .reset, .clk);
            end
        end
    endgenerate

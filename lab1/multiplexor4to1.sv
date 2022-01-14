@@ -1,3 +1,4 @@
+`timescale 1ps / 1ps
 module multiplexor4to1(in, out, select);
 	input logic [3:0] in;
 	input logic [1:0] select;

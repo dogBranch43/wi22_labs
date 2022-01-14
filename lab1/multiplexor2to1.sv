@@ -1,3 +1,6 @@
+
+`timescale 1ps / 1ps
+
 module multiplexor2to1 (in, out, select) ;
 	input logic select;
 	input logic [1:0] in;
@@ -5,14 +8,14 @@ module multiplexor2to1 (in, out, select) ;
 	
 	logic invertedSelect, result1, result2;
 	
-	not inv (invertedSelect, select);
-	and step1 (result1, in[0], select);
-	and step2 (result2, in[1], invertedSelect);
-	or step3 (out, result1, result2);
+	not #5 inv (invertedSelect, select);
+	and #5 step1 (result1, in[0], select);
+	and #5 step2 (result2, in[1], invertedSelect);
+	or #5 step3 (out, result1, result2);
 	
 endmodule
 
-module mulitiplexor2to1_testbench();   
+module multiplexor2to1_testbench();   
   logic [1:0] in;
   logic select;  
   logic out;   

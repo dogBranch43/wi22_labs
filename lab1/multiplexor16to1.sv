@@ -1,3 +1,4 @@
+`timescale 1ps / 1ps
 module multiplexor16to1(in, out, select);
 	input logic [15:0] in;
 	input logic [3:0] select;

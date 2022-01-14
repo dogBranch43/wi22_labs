@@ -1,11 +1,14 @@
+
+`timescale 1ps / 1ps
+
 module decoder1to2(in, out, enable) ;
 	input logic in, enable;
 	output logic [1:0] out;
-	logic invertedIn;
+	wire invertedIn;
 	
-	not interal1 (invertedIn, in); //in = ~invertedIn;
-	and interal2 (out[0], invertedIn, enable); //out[0] = in & enable;
-	and interal3 (out[1], in, enable); //out[1] = invertedIn & enable
+	not #50 interal1 (invertedIn, in); //in = ~invertedIn;
+	and #50 interal2 (out[0], invertedIn, enable); //out[0] = in & enable;
+	and #50 interal3 (out[1], in, enable); //out[1] = invertedIn & enable
 	
 endmodule
 

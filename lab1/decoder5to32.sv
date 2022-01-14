@@ -1,14 +1,16 @@
+`timescale 1ps / 1ps
 module decoder5to32(in, out, enable) ;
 	input logic enable;
 	input logic [4:0] in;
 	output logic [31:0] out;
 	
-	logic[1:0] enablerSwitch;
+	wire [3:0] enablerSwitch;
 	
-	decoder1to2  enabler (in[4], enablerSwitch[1:0], enable);
-	decoder4to16 d2 (in[3:2], out[31:16], enablerSwitch[1]);
-	decoder4to16 d3 (in[1:0], out[15:0], enablerSwitch[0]);
-
+	decoder2to4 enabler (.in(in[4:3]), .out(enablerSwitch[3:0]), .enable(enable));
+	decoder4to16 d2 (.in(in[2:0]), .out(out[7:0]), .enable(enablerSwitch[0]));
+	decoder4to16 d3 (.in(in[2:0]), .out(out[15:8]),  .enable(enablerSwitch[1]));
+	decoder4to16 d4 (.in(in[2:0]), .out(out[23:16]), .enable(enablerSwitch[2]));
+	decoder4to16 d5 (.in(in[2:0]), .out(out[31:24]),  .enable(enablerSwitch[3]));
 
 endmodule
 
@@ -17,7 +19,7 @@ module decoder5to32_testbench();
 	logic  enable;
 	logic [31:0] out;
 	
-	decoder5to32 dut (in, out, enable);
+	decoder5to32 dut (.in, .out, .enable);
 	
 	initial begin
 		integer i;
@@ -28,13 +30,4 @@ module decoder5to32_testbench();
 		end
 	end
 	
-//	initial begin
-//		integer j;
-//		enable = 1;
-//		for (int j = 0; j < 32; j++) begin
-//			in = j;
-//			#15;
-//		end
-//	end
-//	
 endmodule

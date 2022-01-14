@@ -1,3 +1,4 @@
+`timescale 1ps / 1ps
 module multiplexor32to1(in, out, select);
 	input logic [31:0] in;
 	input logic [4:0] select;
