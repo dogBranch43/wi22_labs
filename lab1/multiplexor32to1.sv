@@ -5,8 +5,8 @@ module multiplexor32to1(in, out, select);
 	
 	logic[1:0] outputs;
 	
-	multiplexor16to1 m1 (in[15:0], outputs[0], select);
-	multiplexor16to1 m2 (in[31:16], outputs[1], select);
+	multiplexor16to1 m1 (in[15:0], outputs[0], select[3:0]);
+	multiplexor16to1 m2 (in[31:16], outputs[1], select[3:0]);
 	multiplexor2to1 m3 (outputs, out, select[4]);
 endmodule
 
