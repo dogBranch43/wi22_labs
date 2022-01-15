@@ -8,10 +8,10 @@ module multiplexor2to1 (in, out, select) ;
 	
 	logic invertedSelect, result1, result2;
 	
-	not #5 inv (invertedSelect, select);
-	and #5 step1 (result1, in[0], select);
-	and #5 step2 (result2, in[1], invertedSelect);
-	or #5 step3 (out, result1, result2);
+	not #50 inv (invertedSelect, select);
+	and #50 step1 (result1, in[0], invertedSelect);
+	and #50 step2 (result2, in[1], select);
+	or #50 step3 (out, result1, result2);
 	
 endmodule
 
