@@ -1,4 +1,14 @@
 `timescale 1ps / 1ps
+/**
+	University of Washington EE 469
+	Author : 
+		James Jhong
+		Jean Kim
+	
+	Takes in a stream of 64 bit data and stores it in a 32 by 64 bit array.
+	Data can be accessed via trigger either of the two Read Register.
+*/
+
 module regfile(ReadData1, ReadData2, WriteData, 
 					 ReadRegister1, ReadRegister2, WriteRegister,
 					 RegWrite, clk) ;
