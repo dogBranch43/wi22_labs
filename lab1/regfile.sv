@@ -42,13 +42,11 @@ module regfile(ReadData1, ReadData2, WriteData,
        for (i = 0; i < 32; i++) begin : register
            for  (j = 0; j < 64; j++) begin : multiplexor
 					logic [1 : 0] muxInput;
-					logic temp2;
-					assign temp = registers[i][j];	
-					assign muxInput[0] = WriteData[j];
-					assign muxInput[1] = temp;
-					multiplexor2to1 m1(.in(muxInput), .out(temp2), .select(enableDecoders[i]));
-               D_FF dff1 (.q(temp), .d(temp2), .reset(1'b0), .clk(clk));
-					
+					logic temp;	
+					assign muxInput[1] = WriteData[j];
+					assign muxInput[0] = registers[i][j];
+					multiplexor2to1 m1(.in(muxInput), .out(temp), .select(enableDecoders[i]));
+               D_FF dff1 (.q(registers[i][j]), .d(temp), .reset(1'b0), .clk(clk));
            end
        end
    endgenerate
