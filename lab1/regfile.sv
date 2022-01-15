@@ -9,7 +9,7 @@ module regfile(ReadData1, ReadData2, WriteData,
 	
 	logic [31:0][63:0] registers;
    logic [31:0] enableDecoders, curRead1Register, curRead2Register;
-	assign registers[31] = 64'b0;
+   assign registers[31] = 64'b0;
 	
 	//main method
 	//regwrite and write register goes to the decoder
@@ -29,15 +29,26 @@ module regfile(ReadData1, ReadData2, WriteData,
 	multiplexor64of32to1 chain64 (.in(registers), .readData1(ReadData1), .readData2(ReadData2), .readRegister1(ReadRegister1), .readRegister2(ReadRegister2));
 	
     //registers
+	 
+//	 always begin
+//        for (integer i = 0; i < 32; i++) begin
+//            for (integer j = 0; j < 64; j++) begin
+//                registers[i][j] = WriteData[j];
+//            end
+//        end
+//    end
 	genvar i,j;
    generate 
        for (i = 0; i < 32; i++) begin : register
            for  (j = 0; j < 64; j++) begin : multiplexor
-					logic [1:0] temp;
+					logic [1 : 0] muxInput;
 					logic temp2;
-					assign temp[1] = registers[i][j];	
-					multiplexor2to1 m1(.in(temp), .out(temp2), .select(enableDecoders[i]));
-               D_FF dff1 (.q(temp2), .d(temp[0]), .reset, .clk);
+					assign temp = registers[i][j];	
+					assign muxInput[0] = WriteData[j];
+					assign muxInput[1] = temp;
+					multiplexor2to1 m1(.in(muxInput), .out(temp2), .select(enableDecoders[i]));
+               D_FF dff1 (.q(temp), .d(temp2), .reset(1'b0), .clk(clk));
+					
            end
        end
    endgenerate
