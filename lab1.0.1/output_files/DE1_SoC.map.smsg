@@ -1,0 +1,2 @@
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10030): Net "reset" at regfile.sv(24) has no driver or initial value, using a default initial value '0' File: //udrive.uw.edu/udrive/EE469/lab1.0.1/regfile.sv Line: 24
