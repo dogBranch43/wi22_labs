@@ -16,8 +16,10 @@ module alu(A, B, cntrl, result, negative, zero, overflow, carry_out) ;
 	//logic [63:0] alu_slices;
 	//assign negative = alu_slices[63];
 	//assign overflow = alu_slices[63] carryout XOR carryout alu_slices[62];
-	//assign zero = XOR all alu_slices
+	//assign zero = XOR all alu_slices (make a bunch of nor gates and and all of them)
 	//assign carryOut = result from alu [63]
 	
-	
+	//first carryIn is 0?
+	//first enable is cntrl2:0
+	//
 endmodule
