@@ -1,0 +1,8 @@
+module regfile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegWrite, clk, ReadData1, ReadData2) ;
+	input logic	[4:0] 	ReadRegister1, ReadRegister2, WriteRegister;
+	input logic [63:0]	WriteData;
+	input logic 			RegWrite, clk;
+	output logic [63:0]	ReadData1, ReadData2;
+	
+	
+endmodule
