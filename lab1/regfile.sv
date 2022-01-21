@@ -1,4 +1,5 @@
 `timescale 1ps / 1ps
+
 /**
 	University of Washington EE 469
 	Author : 
@@ -8,7 +9,6 @@
 	Takes in a stream of 64 bit data and stores it in a 32 by 64 bit array.
 	Data can be accessed via trigger either of the two Read Register.
 */
-
 module regfile(ReadData1, ReadData2, WriteData, 
 					 ReadRegister1, ReadRegister2, WriteRegister,
 					 RegWrite, clk) ;
@@ -38,18 +38,11 @@ module regfile(ReadData1, ReadData2, WriteData,
 	//64x32:1 mux
 	multiplexor64of32to1 chain64 (.in(registers), .readData1(ReadData1), .readData2(ReadData2), .readRegister1(ReadRegister1), .readRegister2(ReadRegister2));
 	
-    //registers
-	 
-//	 always begin
-//        for (integer i = 0; i < 32; i++) begin
-//            for (integer j = 0; j < 64; j++) begin
-//                registers[i][j] = WriteData[j];
-//            end
-//        end
-//    end
+
 	genvar i,j;
    generate 
        for (i = 0; i < 32; i++) begin : register
+
            for  (j = 0; j < 64; j++) begin : multiplexor
 					logic [1 : 0] muxInput;
 					logic temp;	
@@ -61,3 +54,4 @@ module regfile(ReadData1, ReadData2, WriteData,
        end
    endgenerate
 endmodule
+
