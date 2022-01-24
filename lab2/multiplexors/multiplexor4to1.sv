@@ -1,4 +1,6 @@
 `timescale 1ps / 1ps
+
+//4 to 1 mux built out of 2 to 1 muxes.
 module multiplexor4to1(in, out, select);
 	input logic [3:0] in;
 	input logic [1:0] select;

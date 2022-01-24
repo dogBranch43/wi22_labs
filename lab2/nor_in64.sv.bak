@@ -1,0 +1,6 @@
+module nor_in64(in ,zeroFlag) ;
+	output logic zeroFlag;
+	input logic [63 : 0] in;
+	logic []
+	
+endmodule
