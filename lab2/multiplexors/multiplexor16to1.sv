@@ -1,3 +1,5 @@
+
+//16 to 1 multiplexor built out of 5 4 to 1 mux
 `timescale 1ps / 1ps
 module multiplexor16to1(in, out, select);
 	input logic [15:0] in;

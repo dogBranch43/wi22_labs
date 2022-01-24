@@ -1,6 +1,6 @@
 
 `timescale 1ps / 1ps
-
+//A two to 1 mux with a 50 ps delay
 module multiplexor2to1 (in, out, select) ;
 	input logic select;
 	input logic [1:0] in;

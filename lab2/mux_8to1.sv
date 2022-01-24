@@ -2,7 +2,7 @@
 //Jean Kim
 //EE469 Lab 2
 
-//This is a 8:1 Mux built out of 4:1 Mux
+//This is a 8:1 Mux built out of 4:1 Mux and a 2 to 1 mux 
 module mux_8to1(in, out, select) ;
 	input logic [7:0] in;
 	input logic [2:0] select;
