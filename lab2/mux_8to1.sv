@@ -11,6 +11,6 @@ module mux_8to1(in, out, select) ;
 	logic[1:0] temp;
 	multiplexor4to1 m1(.in(in[3:0]),.out(select[1:0]),.select(temp[0]));
 	multiplexor4to1 m2(.in(in[7:4]),.out(select[1:0]),.select(temp[1]));
-	multiplexor2to1 m3(.in(temp),.out(select[2]),.select(out));
+	multiplexor2to1 m3(.in(temp),.out(out),.select(select[2]));
 	
 endmodule
