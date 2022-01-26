@@ -1,3 +1,6 @@
+//James Jhong
+//Jean Kim
+//EE469 Lab 2
 
 `timescale 1ps / 1ps
 //A two to 1 mux with a 50 ps delay

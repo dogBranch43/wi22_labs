@@ -1,5 +1,10 @@
+'/James Jhong
+//Jean Kim
+//EE469 Lab 2
+//1/18/2022
 
 `timescale 1ps/1ps
+
 //This module acts as a nor gate for 64 inputs, assuming the inputs come in as an array of bits
 module nor_in64(in ,zeroFlag) ;
 	output logic zeroFlag;

@@ -1,3 +1,8 @@
+//James Jhong
+//Jean Kim
+//EE469 Lab 2
+
+//32 to 1 multiplexor built out of2 16:1 mux and a 2:1 
 `timescale 1ps / 1ps
 module multiplexor32to1(in, out, select);
 	input logic [31:0] in;
