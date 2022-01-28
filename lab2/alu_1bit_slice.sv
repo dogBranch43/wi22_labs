@@ -55,8 +55,8 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		and #50 c10 (t4, a, b);								// Cout of sum
 		and #50 c11 (t5, cin, t3);
 		or  #50 c12 (coResult[2], t4, t5);				
-		
-		not #50 c24 (t10, b);*/
+		*/
+		not #50 c24 (t10, b);
 		
 		fullAdder f2(.a(a), .b(t10), .ci(cin), .co(coResult[3]), .sum(result[3]));
 		
