@@ -29,7 +29,7 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		logic [7:0] result;
 		logic [3:0] coResult;
 		logic [1:0] coSelect;
-		logic t1, t2, t3, t4, t5, t6, t7, t8, t9;
+		logic t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
 		
 		/*
 		* t3 = a xor b
@@ -38,6 +38,7 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		* t6 = not a
 		* t7 = (not a) and b
 		* t8 = not (a xor b)
+		*t10 = not b
 		*/
 		
 		// apaprently "=" doesnt work?? just gon use or gate
@@ -46,6 +47,8 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		
 		or  #50 c24 (result[1], 1'b0, 1'b0);
 		
+		fullAdder f1(.a(a), .b(b), .ci(cin), .co(coResult[2]), .sum(result[2]));
+		/*
 		xor #50 c1 (t3, a, b);								// Sum
 		xor #50 c9 (result[2], t3, cin);
 		
@@ -53,13 +56,18 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		and #50 c11 (t5, cin, t3);
 		or  #50 c12 (coResult[2], t4, t5);				
 		
+		not #50 c24 (t10, b);*/
+		
+		fullAdder f1(.a(a), .b(t10), .ci(cin), .co(coResult[3]), .sum(result[3]));
+		
+		/*
 		xor #50 c2 (result[3], t3, cin);					// Sub, use precalc (a xor b)
 		
 		not #50 c13 (t6, a);									// Cout of sub
 		and #50 c14 (t7, t6, b);
 		not #50 c15 (t8, t3);
 		and #50 c16 (t9, t8, cin);
-		or  #50 c17 (coResult[3], t7, t9);				
+		or  #50 c17 (coResult[3], t7, t9);		*/		
 		
 		and #50 c3 (result[4], a, b);					// Bitwise and
 		//result[3] = t3;
@@ -95,11 +103,20 @@ module alu1bit_test();
 	logic co, out;
 	
 	alu_1bit_slice al1(a, b, cin, co, control, out);
-	
+
 	integer i;
 		
 	initial begin   
 		a = 1'b0; b = 1'b0; cin = 1'b0;
+		control = 3'b010;
+		#1000;
+		a = 1'b1; b = 1'b0; cin = 1'b0;
+		#1000;
+		a = 1'b0; b = 1'b1; cin = 1'b0;
+		#1000;
+		a = 1'b1; b = 1'b1; cin = 1'b0;
+		#1000;
+		/*
 		for (i = 0; i < 6; i++) begin
 			control = i;
 			#200;
@@ -139,7 +156,7 @@ module alu1bit_test();
 		for (i = 0; i < 6; i++) begin
 			control = i;
 			#200;
-		end
-	end   
+		end*/
+	end  
 
 endmodule
