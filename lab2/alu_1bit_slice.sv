@@ -58,7 +58,7 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		
 		not #50 c24 (t10, b);*/
 		
-		fullAdder f1(.a(a), .b(t10), .ci(cin), .co(coResult[3]), .sum(result[3]));
+		fullAdder f2(.a(a), .b(t10), .ci(cin), .co(coResult[3]), .sum(result[3]));
 		
 		/*
 		xor #50 c2 (result[3], t3, cin);					// Sub, use precalc (a xor b)
