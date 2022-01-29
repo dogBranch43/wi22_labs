@@ -10,18 +10,21 @@
 	input logic [63 : 0] in;
 	logic [15 : 0] temp;
 	
+	 //Puts every 4 inputs through or gates, puts result into temp
 	genvar i;
 	generate
-		for (i = 0; i < 64; i = i + 4) begin
+		for (i = 0; i < 64; i = i + 4) begin : callingOr
 			or #50 checkFour (temp[i / 4], in[i], in[i + 1], in[i + 2], in[i + 3]);
 		end
 	endgenerate
 	
-  logic [3:0] norCheck;
+	 //Puts every 4 results through a nor
+  	logic [3:0] norCheck;
 	nor #50 (norCheck[0],temp[0] ,temp[1] ,temp[2] ,temp[3]);
 	nor #50 (norCheck[1],temp[4] ,temp[5] ,temp[6] ,temp[7]);
 	nor #50 (norCheck[2],temp[8] ,temp[9] ,temp[10] ,temp[11]); 
 	nor #50 (norCheck[3],temp[12] ,temp[13] ,temp[14] ,temp[15]);
 	
+	 //And the nors to make sure they are all 1 (which mean zero flag is on)
 	and #50 (zeroFlag, norCheck[0], norCheck[1], norCheck[2], norCheck[3]);
 endmodule
