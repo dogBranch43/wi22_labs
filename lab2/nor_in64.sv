@@ -1,19 +1,19 @@
-'/James Jhong
+//James Jhong
 //Jean Kim
 //EE469 Lab 2
 //1/18/2022
 
-`timescale 1ps/1ps
-
 //This module acts as a nor gate for 64 inputs, assuming the inputs come in as an array of bits
-module nor_in64(in ,zeroFlag) ;
+  `timescale 1ns/10ps
+ module nor_in64(in ,zeroFlag) ;
 	output logic zeroFlag;
 	input logic [63 : 0] in;
 	logic [15 : 0] temp;
 	
 	genvar i;
-		for (int i = 0; i < 16; i++) begin
-			or #50 checkFour (temp[i], in[i], in[i + 1], in[i + 2], in[i + 3]);
+	generate
+		for (i = 0; i < 64; i = i + 4) begin
+			or #50 checkFour (temp[i / 4], in[i], in[i + 1], in[i + 2], in[i + 3]);
 		end
 	endgenerate
 	
