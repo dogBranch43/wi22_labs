@@ -34,31 +34,42 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 
 		or  #50 c1 (result[0], b, 1'b0);
 		
+		//blank operation here
 		or  #50 c2 (result[1], 1'b0, 1'b0);
 		
+		//addition
 		fullAdder f1(.a(a), .b(b), .ci(cin), .co(coResult[2]), .sum(result[2]));
-
+		
+		//making b bar
 		not #50 c3 (notb, b);
 		
+		//subtraction operation with b bar
 		fullAdder f2(.a(a), .b(notb), .ci(cin), .co(coResult[3]), .sum(result[3]));	
-		
+	
+		//Logic Operations
 		and #50 c4 (result[4], a, b);					// Bitwise and
 		
 		or  #50 c5 (result[5], a, b); 					// Bitwise or
 		
 		xor #50 c6 (result[6], a, b);					// Bitwise xor
 		
+		//blank here
 		or  #50 c7 (result[7], 1'b0, 1'b0);
 		
+		//Selecting correct carryout for addition or subtraction
 		or  #50 c8 (t1, control[1], control[0]);		// or control 1 and 0
 		not #50 c9 (t2, control[2]);						// invert control[2]
 		and #50 c10 (coSelect[1], t1, t2);				// Whether CO should matter
 		
+		
 		or  #50 c12 (coSelect[0], control[0], 1'b0);
+		//zeroed unusedResults
 		or  #50 c13 (coResult[0], 1'b0, 1'b0);
 		or  #50 c14 (coResult[1], 1'b0, 1'b0);
 	
+		//Selecting which operation to perform based on control
 		multiplexor8to1 m1(.in(result), .out(out), .select(control)); 
+		//Selecting the proper carry out based on the operation 
 		multiplexor4to1 m2(.in(coResult), .out(co), .select(coSelect));
 		
 endmodule
