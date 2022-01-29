@@ -16,6 +16,7 @@
 // 101:			result = bitwise A | B		value of overflow and carry_out unimportant
 // 110:			result = bitwise A XOR B	value of overflow and carry_out unimportant
 
+
 module alu_1bit_slice(a, b, cin, co, control, out);
 	//add or subtract, Cin, Cout, uses the 2 x 1 mux to determine which one
 		
@@ -31,31 +32,31 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		logic [1:0] coSelect;
 		logic t1, t2, notb;
 
-		or  #50 c18 (result[0], b, 1'b0);
+		or  #50 c1 (result[0], b, 1'b0);
 		
-		or  #50 c24 (result[1], 1'b0, 1'b0);
+		or  #50 c2 (result[1], 1'b0, 1'b0);
 		
 		fullAdder f1(.a(a), .b(b), .ci(cin), .co(coResult[2]), .sum(result[2]));
 
-		not #50 c24 (notb, b);
+		not #50 c3 (notb, b);
 		
 		fullAdder f2(.a(a), .b(notb), .ci(cin), .co(coResult[3]), .sum(result[3]));	
 		
-		and #50 c3 (result[4], a, b);					// Bitwise and
+		and #50 c4 (result[4], a, b);					// Bitwise and
 		
-		or  #50 c4 (result[5], a, b); 					// Bitwise or
+		or  #50 c5 (result[5], a, b); 					// Bitwise or
 		
-		xor #50 c5 (result[6], a, b);					// Bitwise xor
+		xor #50 c6 (result[6], a, b);					// Bitwise xor
 		
-		or  #50 c19 (result[7], 1'b0, 1'b0);
+		or  #50 c7 (result[7], 1'b0, 1'b0);
 		
-		or  #50 c6 (t1, control[1], control[0]);		// or control 1 and 0
-		not #50 c7 (t2, control[2]);						// invert control[2]
-		and #50 c8 (coSelect[1], t1, t2);				// Whether CO should matter
+		or  #50 c8 (t1, control[1], control[0]);		// or control 1 and 0
+		not #50 c9 (t2, control[2]);						// invert control[2]
+		and #50 c10 (coSelect[1], t1, t2);				// Whether CO should matter
 		
-		or  #50 c21 (coSelect[0], control[0], 1'b0);
-		or  #50 c22 (coResult[0], 1'b0, 1'b0);
-		or  #50 c23 (coResult[1], 1'b0, 1'b0);
+		or  #50 c12 (coSelect[0], control[0], 1'b0);
+		or  #50 c13 (coResult[0], 1'b0, 1'b0);
+		or  #50 c14 (coResult[1], 1'b0, 1'b0);
 	
 		multiplexor8to1 m1(.in(result), .out(out), .select(control)); 
 		multiplexor4to1 m2(.in(coResult), .out(co), .select(coSelect));
