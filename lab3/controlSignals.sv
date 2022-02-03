@@ -5,6 +5,7 @@
 //This is the control signals method
 //Based on the inputed instructions, it will select the correct control signals
 //to be used in the CPU
+`timescale 1ns/10ps
 module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
 	input logic [31:0] instruction;
 	input logic zero, negative, carry_out, overflow;
