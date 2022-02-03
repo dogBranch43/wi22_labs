@@ -1,0 +1,5 @@
+module multipelxor32to1();
+	input logic [31:0] in;
+	input logic select;
+	output logic out;
+endmodule
