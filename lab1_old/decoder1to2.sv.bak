@@ -1,7 +1,0 @@
-module decoder1to2(in, out, enable) ;
-	input logic in, enable;
-	output logic out[1:0];
-	
-	
-	
-endmodule

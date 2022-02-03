@@ -1,6 +1,0 @@
-module multipelxor4to1(in, out, select);
-	input logic [3:0] in;
-	input logic select;
-	output logic out;
-	
-endmodule
