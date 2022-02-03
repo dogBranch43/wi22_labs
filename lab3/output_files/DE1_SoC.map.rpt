@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Feb 03 14:10:45 2022
+Thu Feb 03 14:40:40 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Feb 03 14:10:45 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Feb 03 14:40:40 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; alu                                         ;
@@ -651,7 +651,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Feb 03 14:10:30 2022
+    Info: Processing started: Thu Feb 03 14:40:25 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file multiplexors/multiplexor8to1.sv
@@ -724,8 +724,8 @@ Info (21057): Implemented 408 device resources after synthesis - the final resou
     Info (21059): Implemented 68 output pins
     Info (21061): Implemented 209 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Thu Feb 03 14:10:45 2022
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Thu Feb 03 14:40:40 2022
     Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:31
 
