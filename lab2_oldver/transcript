@@ -1,0 +1,180 @@
+# Reading D:/EE/ee_programs2/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:08:21 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# ** Error: (vlog-13069) ./nor_in64.sv(42): near "end": syntax error, unexpected end.
+# End time: 16:08:22 on Jan 28,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: D:/EE/ee_programs2/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# D:/EE/ee_programs2/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./nor_in64.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:08:57 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# ** Error: ./nor_in64.sv(31): Identifier must be declared with a port mode: in.
+# ** Error: ./nor_in64.sv(31): Identifier must be declared with a port mode: zeroFlag.
+# End time: 16:08:57 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: D:/EE/ee_programs2/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab.do line 7
+# D:/EE/ee_programs2/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./nor_in64.sv""
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:09:19 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:09:19 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:09:20 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# Trace back: Error QStructure::sort: invalid command name ""
+#   <6:proc:11: ::QStructure::sort .main_pane.structure 0 ascending
+#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 ascending
+#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 ascending
+#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 ascending
+#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
+#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+# ** Error: Cannot open macro file: nor_in64_wave.do
+# Error in macro ./runlab.do line 17
+# Cannot open macro file: nor_in64_wave.do
+#     while executing
+# "do nor_in64_wave.do"
+add wave -position end  sim:/nor_in64_testbench/zeroFlag
+add wave -position end  sim:/nor_in64_testbench/in
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/ee469labs/lab2/nor_in64_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:10:02 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:10:02 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:10:04 on Jan 28,2022, Elapsed time: 0:00:44
+# Errors: 17, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:10:04 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+add wave -position end  sim:/nor_in64_testbench/dut/zeroFlag
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/ee469labs/lab2/nor_in64_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:06 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:11:06 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:11:08 on Jan 28,2022, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:11:08 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:12:11 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:12:11 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:12:17 on Jan 28,2022, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:12:17 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+add wave -position end  sim:/nor_in64_testbench/dut/temp
+add wave -position end  sim:/nor_in64_testbench/dut/norCheck
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/ee469labs/lab2/nor_in64_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:25 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:17:25 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:17:27 on Jan 28,2022, Elapsed time: 0:05:10
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:17:27 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:23:48 on Jan 28,2022
+# vlog -reportprogress 300 ./nor_in64.sv 
+# -- Compiling module nor_in64
+# -- Compiling module nor_in64_testbench
+# 
+# Top level modules:
+# 	nor_in64_testbench
+# End time: 16:23:48 on Jan 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:23:53 on Jan 28,2022, Elapsed time: 0:06:26
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work nor_in64_testbench 
+# Start time: 16:23:53 on Jan 28,2022
+# Loading sv_std.std
+# Loading work.nor_in64_testbench
+# Loading work.nor_in64
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# End time: 16:46:03 on Jan 28,2022, Elapsed time: 0:22:10
+# Errors: 0, Warnings: 0
