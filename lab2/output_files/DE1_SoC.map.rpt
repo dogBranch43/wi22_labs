@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Jan 20 20:37:02 2022
+Fri Jan 28 16:34:30 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -38,10 +38,10 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Jan 20 20:37:02 2022           ;
+; Analysis & Synthesis Status ; Failed - Fri Jan 28 16:34:30 2022           ;
 ; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name               ; DE1_SoC                                     ;
-; Top-level Entity Name       ; DE1_SoC                                     ;
+; Top-level Entity Name       ; alu                                         ;
 ; Family                      ; Cyclone V                                   ;
 ; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
 ; Total registers             ; N/A until Partition Merge                   ;
@@ -59,7 +59,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; DE1_SoC            ; DE1_SoC            ;
+; Top-level entity name                                                           ; alu                ; DE1_SoC            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -162,15 +162,15 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Jan 20 20:36:52 2022
+    Info: Processing started: Fri Jan 28 16:34:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor4to1.sv
-    Info (12023): Found entity 1: multiplexor4to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor4to1.sv Line: 2
-    Info (12023): Found entity 2: mux4_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor4to1.sv Line: 15
+    Info (12023): Found entity 1: multiplexor4to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor4to1.sv Line: 8
+    Info (12023): Found entity 2: mux4_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor4to1.sv Line: 21
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor2to1.sv
-    Info (12023): Found entity 1: multiplexor2to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor2to1.sv Line: 4
-    Info (12023): Found entity 2: multiplexor2to1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor2to1.sv Line: 18
+    Info (12023): Found entity 1: multiplexor2to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor2to1.sv Line: 7
+    Info (12023): Found entity 2: multiplexor2to1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor2to1.sv Line: 21
 Info (12021): Found 4 design units, including 4 entities, in source file math.sv
     Info (12023): Found entity 1: mult File: D:/EE/ee469labs/lab2/math.sv Line: 6
     Info (12023): Found entity 2: shifter File: D:/EE/ee469labs/lab2/math.sv Line: 36
@@ -180,27 +180,37 @@ Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
     Info (12023): Found entity 1: D_FF File: D:/EE/ee469labs/lab2/D_FF.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alustim.sv
     Info (12023): Found entity 1: alustim File: D:/EE/ee469labs/lab2/alustim.sv Line: 20
-Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: D:/EE/ee469labs/lab2/alu.sv Line: 10
-Error (10149): Verilog HDL Declaration error at alu_1bit_slice.sv(42): identifier "c6" is already declared in the present scope File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 42
-Error (10112): Ignored design unit "alu_1bit_slice" at alu_1bit_slice.sv(10) due to previous errors File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 10
+Error (10170): Verilog HDL syntax error at alu.sv(10) near text: ";";  expecting a description. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu.sv Line: 10
+Info (12021): Found 0 design units, including 0 entities, in source file alu.sv
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(41) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 41
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(59) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 59
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(64) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 64
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(66) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 66
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(68) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 68
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(75) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 75
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(76) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 76
+Error (10170): Verilog HDL syntax error at alu_1bit_slice.sv(77) near text: "=";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 77
+Error (10112): Ignored design unit "alu_1bit_slice" at alu_1bit_slice.sv(17) due to previous errors File: D:/EE/ee469labs/lab2/alu_1bit_slice.sv Line: 17
 Info (12021): Found 0 design units, including 0 entities, in source file alu_1bit_slice.sv
 Info (12021): Found 1 design units, including 1 entities, in source file fulladder.sv
     Info (12023): Found entity 1: fullAdder File: D:/EE/ee469labs/lab2/fullAdder.sv Line: 11
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor32to1.sv
-    Info (12023): Found entity 1: multiplexor32to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor32to1.sv Line: 2
-    Info (12023): Found entity 2: mux32_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor32to1.sv Line: 14
+    Info (12023): Found entity 1: multiplexor32to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor32to1.sv Line: 7
+    Info (12023): Found entity 2: mux32_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor32to1.sv Line: 19
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor16to1.sv
-    Info (12023): Found entity 1: multiplexor16to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor16to1.sv Line: 2
-    Info (12023): Found entity 2: mux16_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor16to1.sv Line: 18
+    Info (12023): Found entity 1: multiplexor16to1 File: D:/EE/ee469labs/lab2/multiplexors/multiplexor16to1.sv Line: 7
+    Info (12023): Found entity 2: mux16_1_testbench File: D:/EE/ee469labs/lab2/multiplexors/multiplexor16to1.sv Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file mux_8to1.sv
     Info (12023): Found entity 1: mux_8to1 File: D:/EE/ee469labs/lab2/mux_8to1.sv Line: 6
+Info (12021): Found 2 design units, including 2 entities, in source file nor_in64.sv
+    Info (12023): Found entity 1: nor_in64 File: D:/EE/ee469labs/lab2/nor_in64.sv Line: 8
+    Info (12023): Found entity 2: nor_in64_testbench File: D:/EE/ee469labs/lab2/nor_in64.sv Line: 30
 Info (144001): Generated suppressed messages file D:/EE/ee469labs/lab2/output_files/DE1_SoC.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
-    Error: Peak virtual memory: 4770 megabytes
-    Error: Processing ended: Thu Jan 20 20:37:02 2022
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:24
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 10 errors, 0 warnings
+    Error: Peak virtual memory: 4768 megabytes
+    Error: Processing ended: Fri Jan 28 16:34:30 2022
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:22
 
 
 +------------------------------------------+

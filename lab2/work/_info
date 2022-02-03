@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/EE/ee469labs/lab2
+vnor_in64
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1643415828
+!i10b 1
+!s100 H1QjVC]>m96]O[D65nO8G3
+IEUoAf>E>c=b]FHZWF=Ubb3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 nor_in64_sv_unit
+S1
+R0
+Z5 w1643415812
+Z6 8./nor_in64.sv
+Z7 F./nor_in64.sv
+L0 10
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1643415828.000000
+Z10 !s107 ./nor_in64.sv|
+Z11 !s90 -reportprogress|300|./nor_in64.sv|
+!i113 1
+Z12 tCvgOpt 0
+vnor_in64_testbench
+R1
+R2
+!i10b 1
+!s100 57BeY@?NYE5V_9J?D]0DI0
+IN[]l^aAk;0Q]a`fX]4^VO2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 31
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12

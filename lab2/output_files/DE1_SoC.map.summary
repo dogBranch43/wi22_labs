@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Thu Jan 20 20:37:02 2022
+Analysis & Synthesis Status : Failed - Fri Jan 28 16:34:30 2022
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : DE1_SoC
-Top-level Entity Name : DE1_SoC
+Top-level Entity Name : alu
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
