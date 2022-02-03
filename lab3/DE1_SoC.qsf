@@ -689,3 +689,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE datamem.sv
 set_global_assignment -name SDC_FILE DE1_SOC_golden_top.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE multiplexors/mux_8to1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE control_signals.sv
