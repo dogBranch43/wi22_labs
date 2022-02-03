@@ -1,7 +1,0 @@
-module register_dff_en() ;
-	input logic clock, reset, en, d;
-	output logic q;
-	
-
-
-endmodule
