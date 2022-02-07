@@ -14,3 +14,16 @@ module signExtender #(parameter SIZE = 9) (addr, out) ;
 		end
 	endgenerate
 endmodule
+
+module signExtender_testbench() ;
+	logic [8 : 0] addr;
+	logic [63:0] out;
+
+	signExtender dut (.addr, .out);
+
+	initial begin
+		addr = 9'b101110000; #20;
+		addr = 9'b010001111; #20;
+		$stop; 
+	end
+endmodule

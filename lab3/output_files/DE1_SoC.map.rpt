@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Feb 03 14:40:40 2022
+Mon Feb 07 14:37:55 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Feb 03 14:40:40 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Feb 07 14:37:55 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; alu                                         ;
@@ -641,7 +641,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -651,7 +651,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Feb 03 14:40:25 2022
+    Info: Processing started: Mon Feb 07 14:37:35 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file multiplexors/multiplexor8to1.sv
@@ -708,6 +708,11 @@ Info (12021): Found 2 design units, including 2 entities, in source file datamem
     Info (12023): Found entity 1: datamem File: D:/EE/ee469labs/lab3/datamem.sv Line: 12
     Info (12023): Found entity 2: datamem_testbench File: D:/EE/ee469labs/lab3/datamem.sv Line: 70
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file instructionpath.sv
+    Info (12023): Found entity 1: instructionPath File: D:/EE/ee469labs/lab3/instructionPath.sv Line: 3
+Info (12021): Found 2 design units, including 2 entities, in source file signextender.sv
+    Info (12023): Found entity 1: signExtender File: D:/EE/ee469labs/lab3/signExtender.sv Line: 2
+    Info (12023): Found entity 2: signExtender_testbench File: D:/EE/ee469labs/lab3/signExtender.sv Line: 18
 Info (12127): Elaborating entity "alu" for the top level hierarchy
 Info (12128): Elaborating entity "alu_1bit_slice" for hierarchy "alu_1bit_slice:first" File: D:/EE/ee469labs/lab3/alu/alu.sv Line: 21
 Info (12128): Elaborating entity "fullAdder" for hierarchy "alu_1bit_slice:first|fullAdder:f1" File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 42
@@ -724,10 +729,10 @@ Info (21057): Implemented 408 device resources after synthesis - the final resou
     Info (21059): Implemented 68 output pins
     Info (21061): Implemented 209 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4835 megabytes
-    Info: Processing ended: Thu Feb 03 14:40:40 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Mon Feb 07 14:37:55 2022
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:34
 
 
 +------------------------------------------+
