@@ -240,3 +240,5 @@ do runlab.do
 # ** Note: $stop    : ./controlSignals.sv(187)
 #    Time: 32080 ps  Iteration: 0  Instance: /controlSignals_testbench
 # Break in Module controlSignals_testbench at ./controlSignals.sv line 187
+# End time: 14:42:16 on Feb 03,2022, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 0
