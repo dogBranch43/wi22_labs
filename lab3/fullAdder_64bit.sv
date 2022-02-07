@@ -1,5 +1,5 @@
 //this module is a 64 bit adder comprised of 64 1 bit full Adders
-module fullAdder_64bit() ;
+module fullAdder_64bit(a, b, out) ;
 	input logic [63:0] a, b;
 	output logic [63:0] out;
 	logic [63:0] carries;
@@ -8,7 +8,7 @@ module fullAdder_64bit() ;
 	
 	genvar i;
 	generate
-		for (i = 1; i < 64; i++) begin : bit
+		for (i = 1; i < 64; i++) begin : singlebit
 			fullAdder a1 (.a, .b, .cin(carries[i - 1]), .cout(carries[i]), .sum(out[i]));
 		end
 	endgenerate

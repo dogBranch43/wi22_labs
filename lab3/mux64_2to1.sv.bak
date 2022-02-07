@@ -6,7 +6,7 @@ module mux64_2to1(i0, i1, out, select) ;
     genvar i;
     generate
         for (i = 0; i < 64; i++) begin : muxchain
-            multiplexor2to1 mI (.in({i0[i], i1[i]}), .out(out[i]), .select);
+            mulitiplexor2to1 mI (.in({i0[i], i1[i]}), .out(out[i]), .select);
         end
     endgenerate
 endmodule
