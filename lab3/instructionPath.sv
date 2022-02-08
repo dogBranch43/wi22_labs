@@ -9,6 +9,11 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	//Uncond Br 26
 	//CBZ conditional br 19
 	logic[63:0] uncondAddr26, condAddr19;
+	logic[63:0] BrAddr;
+	logic[63:0] condBrTemp;
+	logic[63:0] BrTakenTemp, noBranchTemp;
+
+
 
 	signExtender #(26) unBr (.addr(instruction[23 : 0]), .out(uncondAddr26));
 	signExtender #(19) cbz (.addr(instruction[23 : 5]), .out(condAddr19));
@@ -18,15 +23,8 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	//need two muxs ( 1 takes BrTaken as signal, other takes unCondBr as signal
 	//need two sign extenders
 	
-	genvar i;
-	generate 
-		for (i = 0; i < 64; i++) begin : bits
-			
-
-
-
-		end
-	endgenerate
+	mux64_2to1 m1uncondBr(.i0(uncondAddr26), .i1(condAddr19), .out(BrAddr), .select(UncondBr));
+	mux64_2to1 m2BrTaken(.i0(BrTakenTemp), .i1(noBranchTemp), .out(temp), .select(BrTaken));
 
 	//for addigng PC insturctions
 	//fullAdder_64bit ();
