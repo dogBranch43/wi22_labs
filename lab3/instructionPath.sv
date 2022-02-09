@@ -17,7 +17,7 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	logic[63:0] shiftBrAddr;
 	
 
-	signExtender #(26) unBr (.addr(instruction[23 : 0]), .out(uncondAddr26));
+	signExtender #(26) unBr (.addr(instruction[25 : 0]), .out(uncondAddr26));
 	signExtender #(19) cbz (.addr(instruction[23 : 5]), .out(condAddr19));
 		
 	
@@ -29,9 +29,9 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	mux64_2to1 m1uncondBr(.i0(uncondAddr26), .i1(condAddr19), .out(BrAddr), .select(UncondBr));
 	mux64_2to1 m2BrTaken(.i0(BrTakenTemp), .i1(noBranchTemp), .out(pcTemp), .select(BrTaken));
 	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcPrev));
-
-	shifter branchLeftShift2 (.value(BrAddr), .direction(1'b0), .distance(6'b000010), .result(shiftBrAddr));
-
+//
+//	shifter branchLeftShift2 (.value(BrAddr), .direction(1'b0), .distance(6'b000010), .result(shiftBrAddr));
+	
 	//for addigng PC insturctions
 	fullAdder_64bit plus4 (.a(PC), .b(64'd4), .out(noBranchTemp));
 	fullAdder_64bit plusBr (.a(pcPrev), .b(shiftBrAddr), .out(BrTakenTemp));
