@@ -29,8 +29,8 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	mux64_2to1 m1uncondBr(.i0(uncondAddr26), .i1(condAddr19), .out(BrAddr), .select(UncondBr));
 	mux64_2to1 m2BrTaken(.i0(BrTakenTemp), .i1(noBranchTemp), .out(pcTemp), .select(BrTaken));
 	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcPrev));
-//
-//	shifter branchLeftShift2 (.value(BrAddr), .direction(1'b0), .distance(6'b000010), .result(shiftBrAddr));
+
+	assign shiftBrAddr = BrAddr << 2;
 	
 	//for addigng PC insturctions
 	fullAdder_64bit plus4 (.a(PC), .b(64'd4), .out(noBranchTemp));

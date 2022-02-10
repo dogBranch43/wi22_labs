@@ -1,5 +1,5 @@
 Flow report for DE1_SoC
-Tue Feb 08 17:55:42 2022
+Wed Feb 09 19:57:52 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Feb 08 17:55:42 2022       ;
+; Flow Status                     ; Successful - Wed Feb 09 19:57:52 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; alu                                         ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/08/2022 17:55:29 ;
+; Start date & time ; 02/09/2022 19:57:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 5311869267696.164437172918436          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 5311869267696.164446545703392          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -101,8 +101,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4836 MB             ; 00:00:28                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:28                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4837 MB             ; 00:00:32                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
