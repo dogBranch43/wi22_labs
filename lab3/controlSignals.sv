@@ -6,10 +6,10 @@
 //Based on the inputed instructions, it will select the correct control signals
 //to be used in the CPU
 `timescale 1ps/1ps
-module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp);
+module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, writeEnable, BrTaken, UncondBr, ALUOp);
 	input logic [31:0] instruction;
 	input logic zero, negative, carry_out, overflow;
-	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp;
+	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp, writeEnable;
 	
 	//Instructions
 	parameter [10:0] LDUR = 11'b11111000010, ADDI = 11'b1001000100x, B = 11'b000101xxxxx,
@@ -27,6 +27,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										ALUOp     = 3'b010;
+										writeEnable = 0;
 						end
 			 
 			 CBZ : begin
@@ -39,6 +40,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = zero;
 										UncondBr  = 1'b0;
 										ALUOp     = 3'b000;
+										writeEnable = 0;
 					 end
 			 
 			 SUBS : begin
@@ -51,10 +53,19 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										ALUOp     = 3'b011;
+										writeEnable = 1;
 			 end
 			 
 			 LSR : begin
-			 
+			 			        		Reg2Loc   = 1'b1;
+			                    		ALUSrc    = 1'b0;
+			                    		MemToReg  = 1'b0;
+			                    		MemWrite  = 1'b1;
+										RegWrite  = 1'b1;
+										BrTaken   = 1'bx;
+			                    		UncondBr  = 1'b0;
+										ALUOp     = 3'bxxx;
+						    			writeEnable = 0;
 			 end
 			 
 			 LDUR : begin
@@ -67,6 +78,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										ALUOp     = 3'b010;
+										writeEnable = 0;
 			 end
 			  
 			 ADDS :begin			
@@ -78,6 +90,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										ALUOp     = 3'b010;
+										writeEnable = 1;
 			 end
 			 
 			 B :begin
@@ -89,6 +102,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b1;
 										UncondBr  = 1'b1;
 										ALUOp     = 3'bxxx;
+										writeEnable = 0;
 			 end
 			 
 			 STUR : begin
@@ -101,30 +115,33 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										ALUOp     = 3'b010;
+										writeEnable = 0;
 			 end
 			 
 			 EOR : begin
 										
-			                     Reg2Loc   = 1'b1;
-			                     ALUSrc    = 1'b0;
-			                     MemToReg  = 1'b0;
-			                     MemWrite  = 1'b1;
+			                    		Reg2Loc   = 1'b1;
+			                    		ALUSrc    = 1'b0;
+			                    		MemToReg  = 1'b0;
+			                    		MemWrite  = 1'b1;
 										RegWrite  = 1'b1;
 										BrTaken   = 1'bx;
-			                     UncondBr  = 1'b0;
+			                    		UncondBr  = 1'b0;
 										ALUOp     = 3'bxxx;
+										writeEnable = 0;
 			 end
 			 
 			 AND : begin
 										
-			                     Reg2Loc   = 1'b1;
-			                     ALUSrc    = 1'b0;
-			                     MemToReg  = 1'b0;
-			                     MemWrite  = 1'b0;
+			                     		Reg2Loc   = 1'b1;
+			                     		ALUSrc    = 1'b0;
+			                     		MemToReg  = 1'b0;
+			                     		MemWrite  = 1'b0;
 										RegWrite  = 1'b1;
 										BrTaken   = 1'b0;
-			                     UncondBr  = 1'bx;
+			                     		UncondBr  = 1'bx;
 										ALUOp     = 3'b100;
+										writeEnable = 0;
 					end
 			BLT : begin
 										Reg2Loc   = 1'b0;
@@ -135,6 +152,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										BrTaken   = overflow ^ negative;
 										UncondBr  = 1'b0;
 										ALUOp     = 3'b011;
+										writeEnable = 0;
 			 end                 
 		endcase
 		end
