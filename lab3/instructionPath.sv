@@ -52,8 +52,8 @@ module instructionPath_testbench() ;
 	end
 
 	initial begin
-		instruction <= 32'b10010001000000000110001111100010; @(posedge clk);
-		instruction <= 32'b10001011000001010000000001000011; @(posedge clk);
+		instruction <= 32'b10010001000000000110001111100010; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
+		instruction <= 32'b10001011000001010000000001000011; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
 		$stop;
 	end
 endmodule
