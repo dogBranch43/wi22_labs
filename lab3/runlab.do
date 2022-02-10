@@ -5,16 +5,25 @@ vlib work
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
 vlog "./controlSignals.sv"
+vlog "./instructionPath.sv"
+vlog "./signExtender.sv"
+vlog "./DFFs_64.sv"
+vlog "./mux64_2to1.sv"
+vlog "./fullAdder_64bit.sv"
+vlog "./multiplexor2to1.sv"
+vlog "./fullAdder.sv"
+vlog "./D_FF.sv"
+
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-vsim -voptargs="+acc" -t 1ps -lib work controlSignals_testbench
+vsim -voptargs="+acc" -t 1ps -lib work instructionPath_testbench
 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do controlSignals_wave.do
+do instructionPath_wave.do
 
 # Set the window types
 view wave

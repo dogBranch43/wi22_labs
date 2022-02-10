@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Feb 03 14:40:40 2022
+Tue Feb 08 17:55:42 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Feb 03 14:40:40 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Feb 08 17:55:42 2022       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; alu                                         ;
@@ -175,13 +175,13 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                         ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
+; multiplexor2to1.sv               ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexor2to1.sv              ;         ;
+; fullAdder.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/fullAdder.sv                    ;         ;
 ; multiplexors/multiplexor8to1.sv  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexors/multiplexor8to1.sv ;         ;
 ; alu/nor_in64.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/nor_in64.sv                 ;         ;
-; alu/fullAdder.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/fullAdder.sv                ;         ;
 ; alu/alu_1bit_slice.sv            ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv           ;         ;
 ; alu/alu.sv                       ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/alu.sv                      ;         ;
 ; multiplexors/multiplexor4to1.sv  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexors/multiplexor4to1.sv ;         ;
-; multiplexors/multiplexor2to1.sv  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexors/multiplexor2to1.sv ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
 
 
@@ -651,9 +651,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Feb 03 14:40:25 2022
+    Info: Processing started: Tue Feb 08 17:55:28 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file multiplexor2to1.sv
+    Info (12023): Found entity 1: multiplexor2to1 File: D:/EE/ee469labs/lab3/multiplexor2to1.sv Line: 7
+    Info (12023): Found entity 2: multiplexor2to1_testbench File: D:/EE/ee469labs/lab3/multiplexor2to1.sv Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder.sv
+    Info (12023): Found entity 1: fullAdder File: D:/EE/ee469labs/lab3/fullAdder.sv Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
+    Info (12023): Found entity 1: D_FF File: D:/EE/ee469labs/lab3/D_FF.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file multiplexors/multiplexor8to1.sv
     Info (12023): Found entity 1: multiplexor8to1 File: D:/EE/ee469labs/lab3/multiplexors/multiplexor8to1.sv Line: 7
 Info (12021): Found 2 design units, including 2 entities, in source file controlsignals.sv
@@ -667,8 +674,6 @@ Info (12021): Found 4 design units, including 4 entities, in source file alu/mat
     Info (12023): Found entity 2: shifter File: D:/EE/ee469labs/lab3/alu/math.sv Line: 36
     Info (12023): Found entity 3: shifter_testbench File: D:/EE/ee469labs/lab3/alu/math.sv Line: 51
     Info (12023): Found entity 4: mult_testbench File: D:/EE/ee469labs/lab3/alu/math.sv Line: 71
-Info (12021): Found 1 design units, including 1 entities, in source file alu/fulladder.sv
-    Info (12023): Found entity 1: fullAdder File: D:/EE/ee469labs/lab3/alu/fullAdder.sv Line: 11
 Info (12021): Found 2 design units, including 2 entities, in source file alu/alu_1bit_slice.sv
     Info (12023): Found entity 1: alu_1bit_slice File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 21
     Info (12023): Found entity 2: alu1bit_test File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 78
@@ -696,9 +701,6 @@ Info (12021): Found 2 design units, including 2 entities, in source file multipl
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor4to1.sv
     Info (12023): Found entity 1: multiplexor4to1 File: D:/EE/ee469labs/lab3/multiplexors/multiplexor4to1.sv Line: 8
     Info (12023): Found entity 2: mux4_1_testbench File: D:/EE/ee469labs/lab3/multiplexors/multiplexor4to1.sv Line: 21
-Info (12021): Found 2 design units, including 2 entities, in source file multiplexors/multiplexor2to1.sv
-    Info (12023): Found entity 1: multiplexor2to1 File: D:/EE/ee469labs/lab3/multiplexors/multiplexor2to1.sv Line: 7
-    Info (12023): Found entity 2: multiplexor2to1_testbench File: D:/EE/ee469labs/lab3/multiplexors/multiplexor2to1.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file registers/regfile.sv
     Info (12023): Found entity 1: regfile File: D:/EE/ee469labs/lab3/registers/regfile.sv Line: 12
 Info (12021): Found 2 design units, including 2 entities, in source file instructmem.sv
@@ -708,6 +710,18 @@ Info (12021): Found 2 design units, including 2 entities, in source file datamem
     Info (12023): Found entity 1: datamem File: D:/EE/ee469labs/lab3/datamem.sv Line: 12
     Info (12023): Found entity 2: datamem_testbench File: D:/EE/ee469labs/lab3/datamem.sv Line: 70
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
+Info (12021): Found 2 design units, including 2 entities, in source file instructionpath.sv
+    Info (12023): Found entity 1: instructionPath File: D:/EE/ee469labs/lab3/instructionPath.sv Line: 3
+    Info (12023): Found entity 2: instructionPath_testbench File: D:/EE/ee469labs/lab3/instructionPath.sv Line: 40
+Info (12021): Found 2 design units, including 2 entities, in source file signextender.sv
+    Info (12023): Found entity 1: signExtender File: D:/EE/ee469labs/lab3/signExtender.sv Line: 2
+    Info (12023): Found entity 2: signExtender_testbench File: D:/EE/ee469labs/lab3/signExtender.sv Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file fulladder_64bit.sv
+    Info (12023): Found entity 1: fullAdder_64bit File: D:/EE/ee469labs/lab3/fullAdder_64bit.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file mux64_2to1.sv
+    Info (12023): Found entity 1: mux64_2to1 File: D:/EE/ee469labs/lab3/mux64_2to1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dffs_64.sv
+    Info (12023): Found entity 1: DFFs_64 File: D:/EE/ee469labs/lab3/DFFs_64.sv Line: 1
 Info (12127): Elaborating entity "alu" for the top level hierarchy
 Info (12128): Elaborating entity "alu_1bit_slice" for hierarchy "alu_1bit_slice:first" File: D:/EE/ee469labs/lab3/alu/alu.sv Line: 21
 Info (12128): Elaborating entity "fullAdder" for hierarchy "alu_1bit_slice:first|fullAdder:f1" File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 42
@@ -724,10 +738,10 @@ Info (21057): Implemented 408 device resources after synthesis - the final resou
     Info (21059): Implemented 68 output pins
     Info (21061): Implemented 209 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4835 megabytes
-    Info: Processing ended: Thu Feb 03 14:40:40 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Tue Feb 08 17:55:42 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:28
 
 
 +------------------------------------------+
