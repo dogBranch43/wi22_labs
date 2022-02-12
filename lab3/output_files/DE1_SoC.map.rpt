@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Fri Feb 11 21:43:51 2022
+Fri Feb 11 21:46:00 2022
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,17 +10,8 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Port Connectivity Checks: "alu_1bit_slice:first|multiplexor4to1:m2"
- 11. Port Connectivity Checks: "alu_1bit_slice:first|multiplexor8to1:m1"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,27 +35,22 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Feb 11 21:43:51 2022       ;
-; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
-; Revision Name                   ; DE1_SoC                                     ;
-; Top-level Entity Name           ; alu                                         ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 199                                         ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Fri Feb 11 21:46:00 2022           ;
+; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name               ; DE1_SoC                                     ;
+; Top-level Entity Name       ; alu                                         ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -170,488 +156,13 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                             ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
-; multiplexor2to1.sv               ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexor2to1.sv              ;         ;
-; fullAdder.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/fullAdder.sv                    ;         ;
-; multiplexors/multiplexor8to1.sv  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexors/multiplexor8to1.sv ;         ;
-; alu/nor_in64.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/nor_in64.sv                 ;         ;
-; alu/alu_1bit_slice.sv            ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv           ;         ;
-; alu/alu.sv                       ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/alu/alu.sv                      ;         ;
-; multiplexors/multiplexor4to1.sv  ; yes             ; User SystemVerilog HDL File  ; D:/EE/ee469labs/lab3/multiplexors/multiplexor4to1.sv ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 152            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 209            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 94             ;
-;     -- 5 input functions                    ; 17             ;
-;     -- 4 input functions                    ; 3              ;
-;     -- <=3 input functions                  ; 95             ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 199            ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; cntrl[0]~input ;
-; Maximum fan-out                             ; 130            ;
-; Total fan-out                               ; 1151           ;
-; Average fan-out                             ; 1.90           ;
-+---------------------------------------------+----------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                       ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name     ; Library Name ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-----------------+--------------+
-; |alu                                ; 209 (1)             ; 0 (0)                     ; 0                 ; 0          ; 199  ; 0            ; |alu                                                                      ; alu             ; work         ;
-;    |alu_1bit_slice:first|           ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:first                                                 ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:first|multiplexor4to1:m2                              ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:first|multiplexor4to1:m2|multiplexor2to1:m3           ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:first|multiplexor8to1:m1                              ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:first|multiplexor8to1:m1|multiplexor2to1:m3           ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[10].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[10].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[11].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[11].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[11].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[11].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[11].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[11].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[12].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[12].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[13].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[13].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[13].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[13].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[13].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[13].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[14].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[14].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[15].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[15].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[15].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[15].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[15].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[15].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[16].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[16].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[17].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[17].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[17].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[17].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[17].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[17].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[18].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[18].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[19].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[19].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[19].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[19].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[19].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[19].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[1].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[1].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[1].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[1].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[1].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[1].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[20].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[20].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[21].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[21].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[21].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[21].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[21].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[21].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[22].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[22].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[23].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[23].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[23].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[23].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[23].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[23].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[24].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[24].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[25].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[25].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[25].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[25].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[25].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[25].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[26].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[26].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[27].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[27].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[27].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[27].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[27].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[27].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[28].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[28].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[29].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[29].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[29].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[29].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[29].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[29].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[2].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1|multiplexor4to1:m2|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[2].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[30].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[30].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[31].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[31].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[31].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[31].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[31].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[31].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[32].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[32].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[33].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[33].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[33].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[33].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[33].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[33].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[34].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[34].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[35].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[35].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[35].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[35].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[35].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[35].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[36].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[36].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[37].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[37].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[37].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[37].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[37].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[37].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[38].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[38].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[39].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[39].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[39].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[39].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[39].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[39].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[3].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[3].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[3].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[3].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[3].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[3].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[40].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[40].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[41].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[41].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[41].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[41].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[41].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[41].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[42].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[42].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[43].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[43].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[43].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[43].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[43].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[43].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[44].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[44].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[45].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[45].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[45].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[45].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[45].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[45].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[46].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[46].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[47].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[47].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[47].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[47].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[47].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[47].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[48].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[48].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[49].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[49].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[49].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[49].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[49].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[49].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[4].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1|multiplexor4to1:m2|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[4].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[50].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[50].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[51].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[51].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[51].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[51].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[51].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[51].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[52].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[52].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[53].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[53].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[53].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[53].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[53].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[53].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[54].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[54].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[55].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[55].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[55].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[55].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[55].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[55].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[56].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[56].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[57].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[57].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[57].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[57].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[57].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[57].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[58].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[58].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[59].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[59].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[59].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[59].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[59].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[59].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[5].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[5].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[5].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[5].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[5].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[5].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[60].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[60].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[61].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[61].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[61].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[61].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[61].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[61].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[62].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1|multiplexor4to1:m2|multiplexor2to1:m1 ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[62].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[63].alu1| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[63].alu1                                       ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[63].alu1|multiplexor4to1:m2                    ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[63].alu1|multiplexor4to1:m2|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[63].alu1|multiplexor8to1:m1                    ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[63].alu1|multiplexor8to1:m1|multiplexor2to1:m3 ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[6].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1|multiplexor4to1:m2|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[6].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[7].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[7].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[7].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[7].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[7].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[7].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[8].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor4to1:m2|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |alu_1bit_slice:slices[9].alu1|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[9].alu1                                        ; alu_1bit_slice  ; work         ;
-;       |multiplexor4to1:m2|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[9].alu1|multiplexor4to1:m2                     ; multiplexor4to1 ; work         ;
-;          |multiplexor2to1:m1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[9].alu1|multiplexor4to1:m2|multiplexor2to1:m1  ; multiplexor2to1 ; work         ;
-;       |multiplexor8to1:m1|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[9].alu1|multiplexor8to1:m1                     ; multiplexor8to1 ; work         ;
-;          |multiplexor2to1:m3|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit_slice:slices[9].alu1|multiplexor8to1:m1|multiplexor2to1:m3  ; multiplexor2to1 ; work         ;
-;    |nor_in64:zeroCheck|             ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|nor_in64:zeroCheck                                                   ; nor_in64        ; work         ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-; 6:1                ; 64 bits   ; 256 LEs       ; 256 LEs              ; 0 LEs                  ; No         ; |alu|alu_1bit_slice:slices[8].alu1|multiplexor8to1:m1|multiplexor2to1:m3|step3 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------+
-; Port Connectivity Checks: "alu_1bit_slice:first|multiplexor4to1:m2" ;
-+----------+-------+----------+---------------------------------------+
-; Port     ; Type  ; Severity ; Details                               ;
-+----------+-------+----------+---------------------------------------+
-; in[1..0] ; Input ; Info     ; Stuck at GND                          ;
-+----------+-------+----------+---------------------------------------+
-
-
-+---------------------------------------------------------------------+
-; Port Connectivity Checks: "alu_1bit_slice:first|multiplexor8to1:m1" ;
-+-------+-------+----------+------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                  ;
-+-------+-------+----------+------------------------------------------+
-; in[7] ; Input ; Info     ; Stuck at GND                             ;
-; in[1] ; Input ; Info     ; Stuck at GND                             ;
-+-------+-------+----------+------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 209                         ;
-;     normal            ; 209                         ;
-;         2 data inputs ; 62                          ;
-;         3 data inputs ; 33                          ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 17                          ;
-;         6 data inputs ; 94                          ;
-; boundary_port         ; 199                         ;
-;                       ;                             ;
-; Max LUT depth         ; 34.00                       ;
-; Average LUT depth     ; 23.01                       ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:04     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Feb 11 21:43:29 2022
+    Info: Processing started: Fri Feb 11 21:45:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file multiplexor2to1.sv
@@ -676,7 +187,7 @@ Info (12021): Found 4 design units, including 4 entities, in source file alu/mat
     Info (12023): Found entity 4: mult_testbench File: D:/EE/ee469labs/lab3/alu/math.sv Line: 71
 Info (12021): Found 2 design units, including 2 entities, in source file alu/alu_1bit_slice.sv
     Info (12023): Found entity 1: alu_1bit_slice File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 21
-    Info (12023): Found entity 2: alu1bit_test File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 78
+    Info (12023): Found entity 2: alu1bit_test File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 79
 Info (12021): Found 1 design units, including 1 entities, in source file alu/alu.sv
     Info (12023): Found entity 1: alu File: D:/EE/ee469labs/lab3/alu/alu.sv Line: 10
 Info (12021): Found 2 design units, including 2 entities, in source file decoders/decoder5to32.sv
@@ -724,27 +235,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file dffs_64
     Info (12023): Found entity 1: DFFs_64 File: D:/EE/ee469labs/lab3/DFFs_64.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
     Info (12023): Found entity 1: dataPath File: D:/EE/ee469labs/lab3/dataPath.sv Line: 5
-Critical Warning (10846): Verilog HDL Instantiation warning at dataPath.sv(58): instance has no name File: D:/EE/ee469labs/lab3/dataPath.sv Line: 58
-Info (12127): Elaborating entity "alu" for the top level hierarchy
-Info (12128): Elaborating entity "alu_1bit_slice" for hierarchy "alu_1bit_slice:first" File: D:/EE/ee469labs/lab3/alu/alu.sv Line: 21
-Info (12128): Elaborating entity "fullAdder" for hierarchy "alu_1bit_slice:first|fullAdder:f1" File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 42
-Info (12128): Elaborating entity "multiplexor8to1" for hierarchy "alu_1bit_slice:first|multiplexor8to1:m1" File: D:/EE/ee469labs/lab3/alu/alu_1bit_slice.sv Line: 72
-Info (12128): Elaborating entity "multiplexor4to1" for hierarchy "alu_1bit_slice:first|multiplexor8to1:m1|multiplexor4to1:m1" File: D:/EE/ee469labs/lab3/multiplexors/multiplexor8to1.sv Line: 14
-Info (12128): Elaborating entity "multiplexor2to1" for hierarchy "alu_1bit_slice:first|multiplexor8to1:m1|multiplexor4to1:m1|multiplexor2to1:m2" File: D:/EE/ee469labs/lab3/multiplexors/multiplexor4to1.sv Line: 15
-Info (12128): Elaborating entity "nor_in64" for hierarchy "nor_in64:zeroCheck" File: D:/EE/ee469labs/lab3/alu/alu.sv Line: 34
-Info (286030): Timing-Driven Synthesis is running
+Error (10206): Verilog HDL Module Declaration error at dataPath.sv(20): top module port "ALUResult" is not found in the port list File: D:/EE/ee469labs/lab3/dataPath.sv Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at dataPath.sv(68): instance has no name File: D:/EE/ee469labs/lab3/dataPath.sv Line: 68
 Info (144001): Generated suppressed messages file D:/EE/ee469labs/lab3/output_files/DE1_SoC.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 408 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 131 input pins
-    Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 209 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Fri Feb 11 21:43:51 2022
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:40
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
+    Error: Peak virtual memory: 4768 megabytes
+    Error: Processing ended: Fri Feb 11 21:46:01 2022
+    Error: Elapsed time: 00:00:12
+    Error: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+
