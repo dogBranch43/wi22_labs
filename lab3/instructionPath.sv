@@ -19,15 +19,14 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 
 	signExtender #(26) unBr (.addr(instruction[25 : 0]), .out(uncondAddr26));
 	signExtender #(19) cbz (.addr(instruction[23 : 5]), .out(condAddr19));
-		
-
 	
-	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcPrev));
+	
+	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcTemp));
 	
 	assign shiftBrAddr = BrAddr << 2;
 	//for addigng PC insturctions
 	fullAdder_64bit plus4 (.a(PC), .b(64'd4), .out(noBranchTemp));
-	fullAdder_64bit plusBr (.a(pcPrev), .b(shiftBrAddr), .out(BrTakenTemp));
+	fullAdder_64bit plusBr (.a(PC), .b(shiftBrAddr), .out(BrTakenTemp));
 
 	mux64_2to1 m1uncondBr(.i1(uncondAddr26), .i0(condAddr19), .out(BrAddr), .select(UncondBr));
 	mux64_2to1 m2BrTaken(.i0(noBranchTemp), .i1(BrTakenTemp), .out(pcTemp), .select(BrTaken));
@@ -53,7 +52,7 @@ module instructionPath_testbench() ;
 	end
 
 	initial begin
-		instruction <= 32'b10010001000000000110001111100010; BrTaken <= 1; UncondBr <= 0; @(posedge clk);
+		instruction <= 32'b10010001000000000110001111100010; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
 		instruction <= 32'b10001011000001010000000001000011; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
 		$stop;
 	end
