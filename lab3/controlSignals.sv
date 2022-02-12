@@ -9,8 +9,8 @@
 module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, writeEnable, BrTaken, UncondBr, ALUOp);
 	input logic [31:0] instruction;
 	input logic zero, negative, carry_out, overflow;
-	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, ALUOp, writeEnable;
-	
+	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, writeEnable;
+		output logic [2:0] ALUOp;
 	//Instructions
 	parameter [10:0] LDUR = 11'b11111000010, ADDI = 11'b1001000100x, B = 11'b000101xxxxx,
 						  SUBS = 11'b11101011000, EOR = 11'b11001010000, CBZ = 11'b10110100xxx, STUR = 11'b11111000000,
