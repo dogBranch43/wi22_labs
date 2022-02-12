@@ -15,11 +15,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
 	 input logic [63:0] WriteData;
     output logic zero, negative, overflow, carry_out;
 
-    output logic [63 : 0] result;
-
-	output logic [63:0] ALUResult;
-
-    //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
+    output logic [63 : 0] result;    //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
     
     logic [63 : 0] d1, d2, writeData, DAddr9, Imm12;
     logic [4: 0] regout;
