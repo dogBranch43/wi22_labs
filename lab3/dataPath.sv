@@ -18,7 +18,6 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     output logic [63 : 0] result;    //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
     
     logic [63 : 0] d1, d2, writeData, DAddr9, Imm12;
-    logic [4: 0] regout;
     logic [63 : 0] bForALU;
     logic [63 : 0] aluOut;
     logic lsrSel;
@@ -26,7 +25,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     logic [63 : 0] constantVal;
     logic [63 : 0] outputMemory;
     logic [63 : 0] mToROutput;
-    logic [63 : 0] regData;
+    logic [4 : 0] regData;
     logic [63 : 0] d1_lsr;
     logic [6 : 0] shamt;
 
@@ -59,8 +58,9 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
 
 
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
-					 .ReadRegister1(Rn), .ReadRegister2(regout), .WriteRegister(Rd),
+					 .ReadRegister1(Rn), .ReadRegister2(regData), .WriteRegister(Rd),
 					 .RegWrite, .clk);
+                     
     alu(.A(d1), .B(bForALU), .cntrl(ALUOp), .result(aluOut), .negative, .zero, .overflow, .carry_out);
     
     mux64_2to1 shifterOut (.i0(aluOut), .i1(d1_lsr), .out(result), .select(lsrSel));
