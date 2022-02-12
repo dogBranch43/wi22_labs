@@ -30,7 +30,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     multiplexor2to1 shifter(.in({}), .out(), .select());
 
     signExtender daddr9(.in(insturctions[20:12]), .out(DAddr9));
-    zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12), .sign());
+    zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12));
 
     regfile rf (.ReadData1(d1), .ReadData2(), .WriteData(), 
 					 .ReadRegister1(instruction[9:5]), .ReadRegister2(regout), .WriteRegister(instruction[4:0]),
