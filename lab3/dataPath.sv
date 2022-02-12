@@ -43,7 +43,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     genvar i;
     generate 
         for (i = 0; i < 5; i++) begin : regs
-            multiplexor2to1 regs (.in({Rm, Rd}), .out(regData), .select(Reg2Loc));
+            multiplexor2to1 regs (.in({Rm[i], Rd[i]}), .out(regData[i]), .select(Reg2Loc));
         end
     endgenerate
 
@@ -60,7 +60,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
 					 .ReadRegister1(Rn), .ReadRegister2(regData), .WriteRegister(Rd),
 					 .RegWrite, .clk);
-                     
+
     alu(.A(d1), .B(bForALU), .cntrl(ALUOp), .result(aluOut), .negative, .zero, .overflow, .carry_out);
     
     mux64_2to1 shifterOut (.i0(aluOut), .i1(d1_lsr), .out(result), .select(lsrSel));

@@ -1,1 +1,418 @@
 # Reading D:/EE/ee_programs2/modelsim_ase/tcl/vsim/pref.tcl
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:48 on Feb 11,2022
+# vlog -reportprogress 300 ./controlSignals.sv 
+# -- Compiling module controlSignals
+# -- Compiling module controlSignals_testbench
+# 
+# Top level modules:
+# 	controlSignals_testbench
+# End time: 22:54:48 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:48 on Feb 11,2022
+# vlog -reportprogress 300 ./instructionPath.sv 
+# -- Compiling module instructionPath
+# -- Compiling module instructionPath_testbench
+# 
+# Top level modules:
+# 	instructionPath_testbench
+# End time: 22:54:48 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:48 on Feb 11,2022
+# vlog -reportprogress 300 ./signExtender.sv 
+# -- Compiling module signExtender
+# -- Compiling module signExtender_testbench
+# 
+# Top level modules:
+# 	signExtender_testbench
+# End time: 22:54:48 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:48 on Feb 11,2022
+# vlog -reportprogress 300 ./DFFs_64.sv 
+# -- Compiling module DFFs_64
+# 
+# Top level modules:
+# 	DFFs_64
+# End time: 22:54:48 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:48 on Feb 11,2022
+# vlog -reportprogress 300 ./mux64_2to1.sv 
+# -- Compiling module mux64_2to1
+# 
+# Top level modules:
+# 	mux64_2to1
+# End time: 22:54:48 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:49 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module fullAdder_64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_64bit_testbench
+# End time: 22:54:49 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:49 on Feb 11,2022
+# vlog -reportprogress 300 ./multiplexor2to1.sv 
+# -- Compiling module multiplexor2to1
+# -- Compiling module multiplexor2to1_testbench
+# 
+# Top level modules:
+# 	multiplexor2to1
+# 	multiplexor2to1_testbench
+# End time: 22:54:49 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:49 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 22:54:49 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:54:49 on Feb 11,2022
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 22:54:49 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work fullAdder_64bit_testbench 
+# Start time: 22:54:49 on Feb 11,2022
+# Loading sv_std.std
+# Loading work.fullAdder_64bit_testbench
+# ** Error: (vsim-3037) ./fullAdder_64bit.sv(21): Missing instance name in instantiation of 'fullAdder_64bit'.
+#    Time: 0 ps  Iteration: 0  Instance: /fullAdder_64bit_testbench File: ./fullAdder_64bit.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 21
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:35 on Feb 11,2022
+# vlog -reportprogress 300 ./controlSignals.sv 
+# -- Compiling module controlSignals
+# -- Compiling module controlSignals_testbench
+# 
+# Top level modules:
+# 	controlSignals_testbench
+# End time: 22:55:35 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:35 on Feb 11,2022
+# vlog -reportprogress 300 ./instructionPath.sv 
+# -- Compiling module instructionPath
+# -- Compiling module instructionPath_testbench
+# 
+# Top level modules:
+# 	instructionPath_testbench
+# End time: 22:55:35 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:35 on Feb 11,2022
+# vlog -reportprogress 300 ./signExtender.sv 
+# -- Compiling module signExtender
+# -- Compiling module signExtender_testbench
+# 
+# Top level modules:
+# 	signExtender_testbench
+# End time: 22:55:35 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:36 on Feb 11,2022
+# vlog -reportprogress 300 ./DFFs_64.sv 
+# -- Compiling module DFFs_64
+# 
+# Top level modules:
+# 	DFFs_64
+# End time: 22:55:36 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:36 on Feb 11,2022
+# vlog -reportprogress 300 ./mux64_2to1.sv 
+# -- Compiling module mux64_2to1
+# 
+# Top level modules:
+# 	mux64_2to1
+# End time: 22:55:36 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:36 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module fullAdder_64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_64bit_testbench
+# End time: 22:55:36 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:36 on Feb 11,2022
+# vlog -reportprogress 300 ./multiplexor2to1.sv 
+# -- Compiling module multiplexor2to1
+# -- Compiling module multiplexor2to1_testbench
+# 
+# Top level modules:
+# 	multiplexor2to1
+# 	multiplexor2to1_testbench
+# End time: 22:55:37 on Feb 11,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:37 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 22:55:37 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:55:37 on Feb 11,2022
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 22:55:37 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work fullAdder_64bit_testbench 
+# Start time: 22:54:49 on Feb 11,2022
+# Loading sv_std.std
+# Loading work.fullAdder_64bit_testbench
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'fullAdder_64bit_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /fullAdder_64bit_testbench/dut/first File: ./fullAdder.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab.do PAUSED at line 21
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:19 on Feb 11,2022
+# vlog -reportprogress 300 ./controlSignals.sv 
+# -- Compiling module controlSignals
+# -- Compiling module controlSignals_testbench
+# 
+# Top level modules:
+# 	controlSignals_testbench
+# End time: 22:56:19 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:19 on Feb 11,2022
+# vlog -reportprogress 300 ./instructionPath.sv 
+# -- Compiling module instructionPath
+# -- Compiling module instructionPath_testbench
+# 
+# Top level modules:
+# 	instructionPath_testbench
+# End time: 22:56:19 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:19 on Feb 11,2022
+# vlog -reportprogress 300 ./signExtender.sv 
+# -- Compiling module signExtender
+# -- Compiling module signExtender_testbench
+# 
+# Top level modules:
+# 	signExtender_testbench
+# End time: 22:56:19 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:20 on Feb 11,2022
+# vlog -reportprogress 300 ./DFFs_64.sv 
+# -- Compiling module DFFs_64
+# 
+# Top level modules:
+# 	DFFs_64
+# End time: 22:56:20 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:20 on Feb 11,2022
+# vlog -reportprogress 300 ./mux64_2to1.sv 
+# -- Compiling module mux64_2to1
+# 
+# Top level modules:
+# 	mux64_2to1
+# End time: 22:56:20 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:20 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module fullAdder_64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_64bit_testbench
+# End time: 22:56:20 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:20 on Feb 11,2022
+# vlog -reportprogress 300 ./multiplexor2to1.sv 
+# -- Compiling module multiplexor2to1
+# -- Compiling module multiplexor2to1_testbench
+# 
+# Top level modules:
+# 	multiplexor2to1
+# 	multiplexor2to1_testbench
+# End time: 22:56:21 on Feb 11,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:21 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 22:56:21 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:21 on Feb 11,2022
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 22:56:21 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work fullAdder_64bit_testbench 
+# Start time: 22:54:49 on Feb 11,2022
+# Loading sv_std.std
+# Loading work.fullAdder_64bit_testbench
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder
+# ** Error: Cannot open macro file: fullAdder_64bit_wave.do
+# Error in macro ./runlab.do line 26
+# Cannot open macro file: fullAdder_64bit_wave.do
+#     while executing
+# "do fullAdder_64bit_wave.do"
+add wave -position end  sim:/fullAdder_64bit_testbench/a
+add wave -position end  sim:/fullAdder_64bit_testbench/b
+add wave -position end  sim:/fullAdder_64bit_testbench/out
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jimmy  Hostname: LAPTOP-V7FDJAQJ  ProcessID: 17328
+#           Attempting to use alternate WLF file "./wlft7fytyb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7fytyb
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/ee469labs/lab3/fullAdder_64bit_wave.do
+do runlab.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:49 on Feb 11,2022
+# vlog -reportprogress 300 ./controlSignals.sv 
+# -- Compiling module controlSignals
+# -- Compiling module controlSignals_testbench
+# 
+# Top level modules:
+# 	controlSignals_testbench
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./instructionPath.sv 
+# -- Compiling module instructionPath
+# -- Compiling module instructionPath_testbench
+# 
+# Top level modules:
+# 	instructionPath_testbench
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./signExtender.sv 
+# -- Compiling module signExtender
+# -- Compiling module signExtender_testbench
+# 
+# Top level modules:
+# 	signExtender_testbench
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./DFFs_64.sv 
+# -- Compiling module DFFs_64
+# 
+# Top level modules:
+# 	DFFs_64
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./mux64_2to1.sv 
+# -- Compiling module mux64_2to1
+# 
+# Top level modules:
+# 	mux64_2to1
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module fullAdder_64bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_64bit_testbench
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./multiplexor2to1.sv 
+# -- Compiling module multiplexor2to1
+# -- Compiling module multiplexor2to1_testbench
+# 
+# Top level modules:
+# 	multiplexor2to1
+# 	multiplexor2to1_testbench
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:50 on Feb 11,2022
+# vlog -reportprogress 300 ./fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 22:56:50 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:56:51 on Feb 11,2022
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 22:56:51 on Feb 11,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:56:52 on Feb 11,2022, Elapsed time: 0:02:03
+# Errors: 5, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work fullAdder_64bit_testbench 
+# Start time: 22:56:53 on Feb 11,2022
+# Loading sv_std.std
+# Loading work.fullAdder_64bit_testbench
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Jimmy  Hostname: LAPTOP-V7FDJAQJ  ProcessID: 17328
+#           Attempting to use alternate WLF file "./wlftt5sqmb".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftt5sqmb
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./fullAdder_64bit.sv(26)
+#    Time: 100 ns  Iteration: 0  Instance: /fullAdder_64bit_testbench
+# Break in Module fullAdder_64bit_testbench at ./fullAdder_64bit.sv line 26

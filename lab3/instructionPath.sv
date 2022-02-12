@@ -20,21 +20,22 @@ module instructionPath(clk, BrTaken, UncondBr, instruction, PC) ;
 	signExtender #(26) unBr (.addr(instruction[25 : 0]), .out(uncondAddr26));
 	signExtender #(19) cbz (.addr(instruction[23 : 5]), .out(condAddr19));
 		
-	
-	//Need 1 shifter to two places
-	//need 2 adders
-	//need two muxs ( 1 takes BrTaken as signal, other takes unCondBr as signal
-	//need two sign extenders
-	
-	mux64_2to1 m1uncondBr(.i0(uncondAddr26), .i1(condAddr19), .out(BrAddr), .select(UncondBr));
-	mux64_2to1 m2BrTaken(.i0(BrTakenTemp), .i1(noBranchTemp), .out(pcTemp), .select(BrTaken));
-	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcPrev));
 
-//	shifter branchLeftShift2 (.value(BrAddr), .direction(1'b0), .distance(6'b000010), .result(shiftBrAddr));
 	
+	DFFs_64 dffs (.clk, .rst(1'b0), .in(PC), .out(pcPrev));
+	
+	assign shiftBrAddr = BrAddr << 2;
 	//for addigng PC insturctions
 	fullAdder_64bit plus4 (.a(PC), .b(64'd4), .out(noBranchTemp));
 	fullAdder_64bit plusBr (.a(pcPrev), .b(shiftBrAddr), .out(BrTakenTemp));
+
+	mux64_2to1 m1uncondBr(.i1(uncondAddr26), .i0(condAddr19), .out(BrAddr), .select(UncondBr));
+	mux64_2to1 m2BrTaken(.i0(noBranchTemp), .i1(BrTakenTemp), .out(pcTemp), .select(BrTaken));
+
+	always_ff @(posedge clk) begin
+		PC <= pcTemp;
+	end
+	
 endmodule
 
 module instructionPath_testbench() ; 
@@ -52,7 +53,7 @@ module instructionPath_testbench() ;
 	end
 
 	initial begin
-		instruction <= 32'b10010001000000000110001111100010; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
+		instruction <= 32'b10010001000000000110001111100010; BrTaken <= 1; UncondBr <= 0; @(posedge clk);
 		instruction <= 32'b10001011000001010000000001000011; BrTaken <= 0; UncondBr <= 0; @(posedge clk);
 		$stop;
 	end

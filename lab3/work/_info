@@ -10,15 +10,15 @@ cModel Technology
 Z0 dD:/EE/ee469labs/lab3
 vcontrolSignals
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1644371734
+Z2 !s110 1644649010
 !i10b 1
-!s100 T:YfL0fC`bRCQkRl8GP:E0
-IKkCSA2L[Z7O4ZoB=AcVYk2
+!s100 3caBM3CNcfk358Pe3X0gM3
+IFX9HeC[bJT]Pa3FaZ_;@o0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 controlSignals_sv_unit
 S1
 R0
-Z5 w1643928021
+Z5 w1644466178
 Z6 8./controlSignals.sv
 Z7 F./controlSignals.sv
 L0 9
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1644371734.000000
+Z9 !s108 1644649009.000000
 Z10 !s107 ./controlSignals.sv|
 Z11 !s90 -reportprogress|300|./controlSignals.sv|
 !i113 1
@@ -36,8 +36,8 @@ vcontrolSignals_testbench
 R1
 R2
 !i10b 1
-!s100 @3mAEQ9ZBBg^Q;8MibNU02
-IAnNTR5[Aj[6RG2:NhkFZK3
+!s100 MR^fkPFTOob3g7k00;o5[0
+IoD9:7SiG47UTXDPCU1]DH1
 R3
 R4
 S1
@@ -45,7 +45,7 @@ R0
 R5
 R6
 R7
-L0 143
+L0 161
 R8
 r1
 !s85 0
@@ -58,7 +58,7 @@ R12
 ncontrol@signals_testbench
 vD_FF
 R1
-R2
+!s110 1644649011
 !i10b 1
 !s100 L7e85alTTj03I<2SWKmiU0
 IF^<Q@J7HjflAccmoCjAGW3
@@ -74,7 +74,7 @@ R8
 r1
 !s85 0
 31
-R9
+!s108 1644649011.000000
 !s107 ./D_FF.sv|
 !s90 -reportprogress|300|./D_FF.sv|
 !i113 1
@@ -98,7 +98,7 @@ R8
 r1
 !s85 0
 31
-R9
+Z13 !s108 1644649010.000000
 !s107 ./DFFs_64.sv|
 !s90 -reportprogress|300|./DFFs_64.sv|
 !i113 1
@@ -122,7 +122,7 @@ R8
 r1
 !s85 0
 31
-R9
+R13
 !s107 ./fullAdder.sv|
 !s90 -reportprogress|300|./fullAdder.sv|
 !i113 1
@@ -132,47 +132,71 @@ vfullAdder_64bit
 R1
 R2
 !i10b 1
-!s100 :leHW41I?oE[YR0=R[LBV2
-I=1Yz;Bbef?Yo[`KNAUMeX3
+!s100 KlRkHj0D4a2<oJ3JecXB_2
+IKn?^zMKjjUkHEM8cj_WBV3
 R3
-!s105 fullAdder_64bit_sv_unit
+Z14 !s105 fullAdder_64bit_sv_unit
 S1
 R0
-w1644371579
-8./fullAdder_64bit.sv
-F./fullAdder_64bit.sv
-L0 2
-R8
-r1
-!s85 0
-31
-R9
-!s107 ./fullAdder_64bit.sv|
-!s90 -reportprogress|300|./fullAdder_64bit.sv|
-!i113 1
-R12
-nfull@adder_64bit
-vinstructionPath
-R1
-R2
-!i10b 1
-!s100 0;:K5aT6RjAjh1DPQ?[0k2
-IFe4B96Rj?dNZohm6VKGeG1
-R3
-Z13 !s105 instructionPath_sv_unit
-S1
-R0
-Z14 w1644371701
-Z15 8./instructionPath.sv
-Z16 F./instructionPath.sv
+Z15 w1644648955
+Z16 8./fullAdder_64bit.sv
+Z17 F./fullAdder_64bit.sv
 L0 3
 R8
 r1
 !s85 0
 31
-R9
-Z17 !s107 ./instructionPath.sv|
-Z18 !s90 -reportprogress|300|./instructionPath.sv|
+R13
+Z18 !s107 ./fullAdder_64bit.sv|
+Z19 !s90 -reportprogress|300|./fullAdder_64bit.sv|
+!i113 1
+R12
+nfull@adder_64bit
+vfullAdder_64bit_testbench
+R1
+R2
+!i10b 1
+!s100 @ng;O1J^Y==SNjK1Ki;Ze1
+I6>;OL`[4h?CdQ@JIb0Z=l2
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+Z20 L0 18
+R8
+r1
+!s85 0
+31
+R13
+R18
+R19
+!i113 1
+R12
+nfull@adder_64bit_testbench
+vinstructionPath
+R1
+R2
+!i10b 1
+!s100 8N=kj2MgE0UQGn]Wzj7KZ2
+Ig_Q7KNd>U<@9n<ch9FgGK2
+R3
+Z21 !s105 instructionPath_sv_unit
+S1
+R0
+Z22 w1644648466
+Z23 8./instructionPath.sv
+Z24 F./instructionPath.sv
+L0 3
+R8
+r1
+!s85 0
+31
+R13
+Z25 !s107 ./instructionPath.sv|
+Z26 !s90 -reportprogress|300|./instructionPath.sv|
 !i113 1
 R12
 ninstruction@path
@@ -180,23 +204,23 @@ vinstructionPath_testbench
 R1
 R2
 !i10b 1
-!s100 1eL7F6fYfUX5jhMcXZM4N3
-IZDZ1XdeVooQSgV9dGD7hb1
+!s100 S`Vg[EMQg8MDc75]eMmT^2
+IJ^gOKHZOT@9j[?ecZC[481
 R3
-R13
+R21
 S1
 R0
-R14
-R15
-R16
-L0 40
+R22
+R23
+R24
+L0 42
 R8
 r1
 !s85 0
 31
-R9
-R17
-R18
+R13
+R25
+R26
 !i113 1
 R12
 ninstruction@path_testbench
@@ -207,20 +231,20 @@ R2
 !s100 _j<czQi`Am6E;^A^26zSG2
 I_U:=c00ClVz<@c2>YF[T62
 R3
-Z19 !s105 multiplexor2to1_sv_unit
+Z27 !s105 multiplexor2to1_sv_unit
 S1
 R0
-Z20 w1643857691
-Z21 8./multiplexor2to1.sv
-Z22 F./multiplexor2to1.sv
+Z28 w1643857691
+Z29 8./multiplexor2to1.sv
+Z30 F./multiplexor2to1.sv
 L0 7
 R8
 r1
 !s85 0
 31
-R9
-Z23 !s107 ./multiplexor2to1.sv|
-Z24 !s90 -reportprogress|300|./multiplexor2to1.sv|
+R13
+Z31 !s107 ./multiplexor2to1.sv|
+Z32 !s90 -reportprogress|300|./multiplexor2to1.sv|
 !i113 1
 R12
 vmultiplexor2to1_testbench
@@ -230,20 +254,20 @@ R2
 !s100 M97E=YoX:[ZhMFA0?9X]C1
 IN`;abBObV][0Q^_7]lkOD3
 R3
-R19
+R27
 S1
 R0
-R20
-R21
-R22
+R28
+R29
+R30
 L0 21
 R8
 r1
 !s85 0
 31
-R9
-R23
-R24
+R13
+R31
+R32
 !i113 1
 R12
 vmux64_2to1
@@ -264,7 +288,7 @@ R8
 r1
 !s85 0
 31
-R9
+R13
 !s107 ./mux64_2to1.sv|
 !s90 -reportprogress|300|./mux64_2to1.sv|
 !i113 1
@@ -276,20 +300,20 @@ R2
 !s100 E_e7QmD;kG2JPoWFfhia:2
 I:LOO]@9]:Z:H=n5`[kWHM0
 R3
-Z25 !s105 signExtender_sv_unit
+Z33 !s105 signExtender_sv_unit
 S1
 R0
-Z26 w1644274100
-Z27 8./signExtender.sv
-Z28 F./signExtender.sv
+Z34 w1644636775
+Z35 8./signExtender.sv
+Z36 F./signExtender.sv
 L0 2
 R8
 r1
 !s85 0
 31
-R9
-Z29 !s107 ./signExtender.sv|
-Z30 !s90 -reportprogress|300|./signExtender.sv|
+R13
+Z37 !s107 ./signExtender.sv|
+Z38 !s90 -reportprogress|300|./signExtender.sv|
 !i113 1
 R12
 nsign@extender
@@ -300,20 +324,20 @@ R2
 !s100 k8Om?9LFhankED3ANOjR^0
 I8TJHd0hjn_RF2o04g6Uj^2
 R3
-R25
+R33
 S1
 R0
-R26
-R27
-R28
-L0 18
+R34
+R35
+R36
+R20
 R8
 r1
 !s85 0
 31
-R9
-R29
-R30
+R13
+R37
+R38
 !i113 1
 R12
 nsign@extender_testbench
