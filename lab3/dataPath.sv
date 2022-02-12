@@ -3,12 +3,12 @@
 //and then accessing the memory accordingly. 
 
 module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
-                                                        ALUOp, zero, negative, overflow, carry_out) ;
+                                                        ALUOp, zero, negative, overflow, carry_out, result) ;
 	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
     input logic [2 : 0] ALUOp;
     input logic [31 : 0] instruction;
     output logic zero, negative, overflow, carry_out;
-
+	output logic [63:0] ALUResult;
     //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
     
     logic [63 : 0] d1, d2, writeData, DAddr9, Imm12;
@@ -36,6 +36,6 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
 					 .ReadRegister1(instruction[9:5]), .ReadRegister2(regout), .WriteRegister(instruction[4:0]),
 					 .RegWrite, .clk);
 
-     alu(.A(d1), .B(bForALU), .cntrl(ALUOp), .result, .negative, .zero, .overflow, .carry_out);
+	alu(.A(d1), .B(bForALU), .cntrl(ALUOp), .result(ALUResult), .negative, .zero, .overflow, .carry_out);
 
 endmodule
