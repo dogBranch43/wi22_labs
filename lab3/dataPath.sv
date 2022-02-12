@@ -1,18 +1,13 @@
 //This module is the dataPath module, which handles using the
 //ALU file and register file to perform operations based on input instructions
 //and then accessing the memory accordingly. 
-`timescale  1ps/1ps
-module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
-
-                                                        ALUOp, zero, negative, overflow, carry_out, result, Rd, Rm, Rn, result, WriteData) ;
-	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc;
-
-                                   
-
+`timescale  1ns/10ps
+module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc, ALUOp, zero, negative, overflow, carry_out, result, Rd, Rm, Rn, result, WriteData) ;
+    input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc;
     input logic [2 : 0] ALUOp;
     input logic [31 : 0] instruction;
     input logic [4 : 0] Rd, Rm, Rn;
-	 input logic [63:0] WriteData;
+    input logic [63:0] WriteData;
     output logic zero, negative, overflow, carry_out;
 
     output logic [63 : 0] result;    //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
@@ -29,11 +24,13 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     logic [63 : 0] d1_lsr;
     logic [6 : 0] shamt;
 
-    or #50 (constant, MemToReg, MemWrite);
-
+    or #5 (constant, MemToReg, MemWrite);
+	
+    //LSR shifting
     assign shamt = instruction[16:10];
     assign d1_lsr = d1 >> shamt;
- 
+ 	
+    //When the operation is LSR, select is on (to be used for selecting either the ALU result or the shifted value
     always_comb begin
 		case (instruction[31:21])
 			11'b11010011010 : lsrSel = 1;
@@ -41,28 +38,29 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     end
 
     genvar i;
-    generate 
+    generate //reg2Loc mux for selecting inputs for the reg file
         for (i = 0; i < 5; i++) begin : regs
             multiplexor2to1 regs (.in({Rm, Rd}), .out(regData), .select(Reg2Loc));
         end
     endgenerate
 
+    //dAddr or imm12 mux selecting for alu
     mux64_2to1 dAddrOrImm12 (.i0(DAddr9), .i1(Imm12), .out(constantVal), .select(constant));
-
-    //mux64_2to1 mToR (.i0(aluResult), .i1(outputMemory), .out(mToROutput), .select(MemToReg));
-
-
+    //selecting between b or the constant of either daddr9 or imm12
     mux64_2to1 aluSCRmux (.i0(d2), .i1(constantVal), .out(bForALU), .select(ALUSrc));
+
+	//extender and zero extender for daddr9 and imm12
     signExtender daddr9 (.in(instruction[20:12]), .out(DAddr9));
     zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12));
 
-
+	//alu and regfile calls
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
 					 .ReadRegister1(Rn), .ReadRegister2(regData), .WriteRegister(Rd),
 					 .RegWrite, .clk);
                      
     alu(.A(d1), .B(bForALU), .cntrl(ALUOp), .result(aluOut), .negative, .zero, .overflow, .carry_out);
-    
+   
+	//choosing between lsr result or alu output
     mux64_2to1 shifterOut (.i0(aluOut), .i1(d1_lsr), .out(result), .select(lsrSel));
 endmodule
 
