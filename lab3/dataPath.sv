@@ -3,11 +3,12 @@
 //and then accessing the memory accordingly. 
 `timescale  1ps/1ps
 module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
-                                                        ALUOp, zero, negative, overflow, carry_out, result, Rd, Rm, Rn, result) ;
-	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
+                                                        ALUOp, zero, negative, overflow, carry_out, result, Rd, Rm, Rn, result, WriteData) ;
+	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc;
     input logic [2 : 0] ALUOp;
     input logic [31 : 0] instruction;
     input logic [4 : 0] Rd, Rm, Rn;
+	 input logic [63:0] WriteData;
     output logic zero, negative, overflow, carry_out;
     output logic [63 : 0] result;
     //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
@@ -16,7 +17,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     logic [4: 0] regout;
     logic [63 : 0] bForALU;
     logic [63 : 0] aluOut;
-    logic [63:0] WriteData;
+    logic lsrSel;
     logic constant;
     logic [63 : 0] constantVal;
     logic [63 : 0] outputMemory;
@@ -25,25 +26,21 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     logic [63 : 0] d1_lsr;
     logic [6 : 0] shamt;
 
-    or #50 (.a(MemToReg), .b(MemWrite), .out(constant));
+    or #50 (constant, MemToReg, MemWrite);
 
     assign shamt = instruction[16:10];
     assign d1_lsr = d1 >> shamt;
-    /* 
-    Need Reg2Loc Mux
-    Need 1 sign extend
-    Need Alusrc mux
-    MemToReg mux
-    */
+ 
     always_comb begin
-        if (instruction[10:0] == LSR = 11'b11010011010)
-            assign d1_lsr = 1;
+		case (instruction[31:21])
+			11'b11010011010 : lsrSel = 1;
+		endcase
     end
 
     genvar i;
     generate 
         for (i = 0; i < 5; i++) begin : regs
-            multiplexor2to1 reg (.in({Rm, Rd}), .out(regData), .select(Reg2Loc));
+            multiplexor2to1 regs (.in({Rm, Rd}), .out(regData), .select(Reg2Loc));
         end
     endgenerate
 
@@ -52,7 +49,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     //mux64_2to1 mToR (.i0(aluResult), .i1(outputMemory), .out(mToROutput), .select(MemToReg));
 
     mux64_2to1 aluSCRmux (.i0(d2), .i1(constantVal), .out(bForALU), .select(ALUSrc));
-    signExtender daddr9 (.in(insturction[20:12]), .out(DAddr9));
+    signExtender daddr9 (.in(instruction[20:12]), .out(DAddr9));
     zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12));
 
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
