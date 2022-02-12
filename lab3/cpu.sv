@@ -15,21 +15,23 @@
 	// LDUR = 11111000010
 	// HALT = 000101
 	// B.LT = 01010100
-module cpu(clk);
-	input logic clk;
+`timescale 1ns/10ps
+module cpu(clk, rst);
+	input logic clk, rst;
 	
 	logic zero, negative, overflow, carry_out;
 	logic [31:0] 	instruction;
 	logic 			BrTaken, UncondBr;
 	logic [63:0] 	PC, ALUResult, read_data, writeData;
 	logic [4:0]		Rd, Rm, Rn;
-	logic [3:0]    cntrls;
+	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, writeEnable;
+	logic [2:0] 	ALUOp;
 	
-	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp, writeEnable;
+	//instructmem 		im1 (.address(PC), .instruction, .clk);
 	
-	instructmem 		im1 (.address(PC), .instruction, .clk);
+	//instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);							// Outputs counter
 	
-	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);							// Outputs counter
+	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .rst);
 	
 	controlSignals		cs1 (.instruction, .zero, .negative, .overflow, .carry_out, 				// input
 											.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, 			// output
@@ -37,8 +39,8 @@ module cpu(clk);
 	
 	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,.ALUOp, // input
 											.zero, .negative, .overflow, .carry_out, .result(ALUResult), .Rd, .Rm, .Rn, .WriteData(writeData)); 								  
-	
-	datamem 				dm1 (.address(Rd), .write_enable(MemWrite), .read_enable(MemToReg), 
+
+	datamem 				dm1 (.address(ALUResult), .write_enable(MemWrite), .read_enable(MemToReg), 
 										.write_data(ALUResult), .clk, .xfer_size(4'b0000), .read_data);
 	
 	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
@@ -55,21 +57,38 @@ module cpu_test();
 	// Force %t's to print in a nice format.
 	initial $timeformat(-9, 2, " ns", 10);
 
-	logic clk, PC;
+	logic clk, rst;
 	
-	cpu cpu1(.clk);
+	cpu cpu1(.clk, .rst);
 	
 	integer i;
-		
-	parameter CLOCK_PERIOD=100;
+
 	initial begin
 		clk <= 0;
-		 PC <= 0;
-		for (i=0; i<CLOCK_PERIOD; i++) begin
-			clk <= ~clk; 
-			#(delay);
-		end
-	 end
+		forever #(delay/2) clk <= ~clk;
+	end
+
+	initial begin
+		rst <=0 ;@(posedge clk);
+		rst <=1 ;@(posedge clk);
+		rst <=0 ;@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		@(posedge clk);
+		$stop;
+	end
+	
 endmodule
 /**
 always_comb begin
