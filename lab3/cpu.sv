@@ -5,6 +5,15 @@
 module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
                                                         ALUOp, zero, negative, overflow, carry_out) ;
 	
+
+
+// 000:			result = B						value of overflow and carry_out unimportant
+// 010:			result = A + B
+// 011:			result = A - B
+// 100:			result = bitwise A & B		value of overflow and carry_out unimportant
+// 101:			result = bitwise A | B		value of overflow and carry_out unimportant
+// 110:			result = bitwise A XOR B	value of overflow and carry_out unimportant
+
 	parameter delay = 100000;
 	
 	parameter ALU_PASS_B=3'b000, ALU_ADD=3'b010, ALU_SUBTRACT=3'b011, ALU_AND=3'b100, ALU_OR=3'b101, ALU_XOR=3'b110;
@@ -20,7 +29,12 @@ module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
 	logic [63:0] 	PC;
 	logic [4:0]		Rd, Rm, Rn;
 	logic [3:0]    cntrls;
+
+
+	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
 	
+	
+
 	// logic [4:0] 	ReadRegister1, ReadRegister2, WriteRegister;
 	// logic [63:0]	WriteData;
 	// logic [63:0]	ReadData1, ReadData2;
@@ -34,6 +48,7 @@ module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
 	// HALT = 000101
 	// B.LT = 01010100
 	
+
 	
 	instructionPath 	ip1(.clk, .BrTaken, .UncondBr, .instruction, .PC);
 	instructmem 		im1 (.address(PC), .instruction, .clk);
@@ -44,3 +59,62 @@ module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
 
 endmodule
 
+
+		
+	
+	always_comb begin
+		casez (instruction[31:22]) begin
+			10'b1001000100: begin			// ADDI
+				Rd = instruction[4:0];		// Destination
+				Rm = instruction[9:5];		// Source
+				Rn = instruction[21:10]; 	// IMM12
+				cntrls = 3'b010;
+			end
+			
+		endcase
+	end
+
+	
+	instructmem 		im1 (.address(PC), .instruction, .clk);
+	
+	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);
+	
+	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,
+                                                        .ALUOp, .zero, .negative, .overflow, .carry_out, .result) ;
+																		  
+	datamem 				dm1 (.address(PC), .write_enable(RegWrite), .read_enable(ReadData1), 
+										.write_data(WriteData), .clk, .xfer_size, .read_data);
+	
+	
+	parameter CLOCK_PERIOD=100;
+	initial begin
+		 clk <= 0;
+		 PC <= 0;
+		 forever #(CLOCK_PERIOD/2) clk <= ~clk; 
+	 end
+ 
+ 
+ 
+	initial begin
+		
+		
+		
+		$display("%t testing PASS_A operations", $time);
+		cntrl = ALU_PASS_B;
+		for (i=0; i<3; i++) begin
+			A = $random(); B = $random();
+			#(delay);
+			assert(result == B && negative == B[63] && zero == (B == '0));
+		end
+		
+		$display("%t testing addition", $time);
+		cntrl = ALU_ADD;
+		A = 64'h0000000000000001; B = 64'h0000000000000001;
+		assign test_val = A + B;
+		#(delay);
+		assert(result == 64'h0000000000000002 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 0);
+
+	end
+	
+
+endmodule 

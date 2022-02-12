@@ -34,8 +34,9 @@ module alu_1bit_slice(a, b, cin, co, control, out);
 		logic t1, t2, notb;
 
 		or  #50 c1 (result[0], b, 1'b0);
+		//assign result[0] = b;
 		
-		//blank operation here
+		//blank operation here, didn't have to use this 
 		or  #50 c2 (result[1], 1'b0, 1'b0);
 		
 		//addition

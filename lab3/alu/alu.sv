@@ -37,5 +37,5 @@ module alu(A, B, cntrl, result, negative, zero, overflow, carry_out) ;
 	assign carry_out = carryOuts[63];
 	
 	//Overflow is the result of a xor of the carryouts from alu 63 and alu 62
-	xor #50 overflowCheck(overflow, carry_out, carryOuts[62]);	
+	xor #5 overflowCheck(overflow, carry_out, carryOuts[62]);	
 endmodule
