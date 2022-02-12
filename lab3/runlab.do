@@ -13,7 +13,11 @@ vlog "./fullAdder_64bit.sv"
 vlog "./multiplexor2to1.sv"
 vlog "./fullAdder.sv"
 vlog "./D_FF.sv"
-
+vlog "./cpu.sv"
+vlog "./zeroExtender.sv"
+vlog "./fullAdder.sv"
+vlog "./datamem.sv"
+vlog "./dataPath.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
@@ -23,7 +27,7 @@ vsim -voptargs="+acc" -t 1ps -lib work instructionPath_testbench
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do instructionPath_wave.do
+do wave.do
 
 # Set the window types
 view wave
