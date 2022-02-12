@@ -1,11 +1,3 @@
-//This module is the dataPath module, which handles using the
-//ALU file and register file to perform operations based on input instructions
-//and then accessing the memory accordingly. 
-
-module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
-                                                        ALUOp, zero, negative, overflow, carry_out) ;
-	
-
 
 // 000:			result = B						value of overflow and carry_out unimportant
 // 010:			result = A + B
@@ -14,30 +6,6 @@ module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
 // 101:			result = bitwise A | B		value of overflow and carry_out unimportant
 // 110:			result = bitwise A XOR B	value of overflow and carry_out unimportant
 
-	parameter delay = 100000;
-	
-	parameter ALU_PASS_B=3'b000, ALU_ADD=3'b010, ALU_SUBTRACT=3'b011, ALU_AND=3'b100, ALU_OR=3'b101, ALU_XOR=3'b110;
-	
-	// Force %t's to print in a nice format.
-	initial $timeformat(-9, 2, " ns", 10);
-
-	integer i;
-	logic clk, zero;
-	logic [63:0]	test_val;
-	logic [31:0] 	instruction;
-	logic 			BrTaken, UncondBr;
-	logic [63:0] 	PC;
-	logic [4:0]		Rd, Rm, Rn;
-	logic [3:0]    cntrls;
-
-
-	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
-	
-	
-
-	// logic [4:0] 	ReadRegister1, ReadRegister2, WriteRegister;
-	// logic [63:0]	WriteData;
-	// logic [63:0]	ReadData1, ReadData2;
 	// ADDI = 1001000100
 	// SUBS = 11101011000
 	// ADDS = 10101011000
@@ -47,45 +15,55 @@ module cpu(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
 	// LDUR = 11111000010
 	// HALT = 000101
 	// B.LT = 01010100
+module cpu(clk);
+	input logic clk;
 	
-
+	logic zero, negative, overflow, carry_out;
+	logic [31:0] 	instruction;
+	logic 			BrTaken, UncondBr;
+	logic [63:0] 	PC, ALUResult, read_data, writeData;
+	logic [4:0]		Rd, Rm, Rn;
+	logic [3:0]    cntrls;
 	
-	instructionPath 	ip1(.clk, .BrTaken, .UncondBr, .instruction, .PC);
+	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp, .writeEnable;
+	
 	instructmem 		im1 (.address(PC), .instruction, .clk);
-	datamem 				dm1 (.address(PC), .write_enable(RegWrite), .read_enable(ReadData1), 
-										.write_data(WriteData), .clk, .xfer_size, .read_data);
+	
+	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);							// Outputs counter
+	
+	controlSignals		cs1 (.instruction, .zero, .negative, .overflow, .carry_out, 				// input
+											.Reg2Loc, .ALUSrc, .MemToReg, .RegWrite, .MemWrite, 			// output
+											.writeEnable, .BrTaken, .UncondBr, .ALUOp);						// output
+	
+	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,.ALUOp, // input
+											.zero, .negative, .overflow, .carry_out, .result(ALUResult), .Rd, .Rm, .Rn) ; // output
+									// add in writeData									  
+	
+	datamem 				dm1 (.address(Rd), .write_enable(MemWrite), .read_enable(MemToReg), 
+										.write_data(ALUResult), .clk, .xfer_size, .read_data);
+	
+	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
+	
+	assign Rd = instruction[4:0];
+	assign Rm = instruction[20:16];
+	assign Rm = instruction[9:5];
+	
+endmodule 
 
-	regfile 				rf1 (.ReadData1, .ReadData2, .WriteData, .ReadRegister1, .ReadRegister2, .WriteRegister, .RegWrite, .clk) ;
+module cpu_test();
+	parameter delay = 100000;
+	
+	parameter ALU_PASS_B=3'b000, ALU_ADD=3'b010, ALU_SUBTRACT=3'b011, ALU_AND=3'b100, ALU_OR=3'b101, ALU_XOR=3'b110;
+	
+	// Force %t's to print in a nice format.
+	initial $timeformat(-9, 2, " ns", 10);
 
-endmodule
-
-
+	logic clk;
+	
+	cpu cpu1(.clk);
+	
+	integer i;
 		
-	
-	always_comb begin
-		casez (instruction[31:22]) begin
-			10'b1001000100: begin			// ADDI
-				Rd = instruction[4:0];		// Destination
-				Rm = instruction[9:5];		// Source
-				Rn = instruction[21:10]; 	// IMM12
-				cntrls = 3'b010;
-			end
-			
-		endcase
-	end
-
-	
-	instructmem 		im1 (.address(PC), .instruction, .clk);
-	
-	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);
-	
-	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,
-                                                        .ALUOp, .zero, .negative, .overflow, .carry_out, .result) ;
-																		  
-	datamem 				dm1 (.address(PC), .write_enable(RegWrite), .read_enable(ReadData1), 
-										.write_data(WriteData), .clk, .xfer_size, .read_data);
-	
-	
 	parameter CLOCK_PERIOD=100;
 	initial begin
 		 clk <= 0;
@@ -115,6 +93,33 @@ endmodule
 		assert(result == 64'h0000000000000002 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 0);
 
 	end
-	
-
-endmodule 
+endmodule
+/**
+always_comb begin
+		casez (instruction[31:21]) begin
+			11'b1001000100?: begin					// ADDI
+				Rd = instruction[4:0];		// Destination
+				Rn = instruction[9:5];		// Source
+				//Rn = instruction[21:10]; 	// IMM12
+				cntrls = 3'b010;
+			end
+			11'b11101011000: begin
+				Rd = instruction[20:16];		// Destination
+				Rn = instruction[9:5];		// Source 1 og value
+				//Rn[11:0] = instruction[4:0]; 	// Source 2 begin minus
+				cntrls = 3'b011;
+			end
+			11'b11111000000: begin 			/// STUR
+				Rd = instruction[4:0];		// Destination
+				Rn = instruction[9:5];		// Source
+			end
+			11'b11111000010: begin 			/// LDUR
+				Rd = instruction[4:0];		// Destination
+				Rn = instruction[9:5];		// Source
+			end
+			default: begin
+				cntrls = 3'b000;
+			end
+		endcase
+	end
+*/
