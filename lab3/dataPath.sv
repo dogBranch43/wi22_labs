@@ -4,7 +4,7 @@
 
 module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
                                                         ALUOp, zero, negative, overflow, carry_out, result) ;
-	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
+	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc;
     input logic [2 : 0] ALUOp;
     input logic [31 : 0] instruction;
     output logic zero, negative, overflow, carry_out;
