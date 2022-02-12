@@ -5,11 +5,18 @@
 module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc,
                                                         ALUOp, zero, negative, overflow, carry_out, result, Rd, Rm, Rn, result) ;
 	input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, ALUOp;
+
+                                   
+
     input logic [2 : 0] ALUOp;
     input logic [31 : 0] instruction;
     input logic [4 : 0] Rd, Rm, Rn;
     output logic zero, negative, overflow, carry_out;
+
     output logic [63 : 0] result;
+
+	output logic [63:0] ALUResult;
+
     //Calling the control signal module from the main would give the signals needed for this method and the reg file. 
     
     logic [63 : 0] d1, d2, writeData, DAddr9, Imm12;
@@ -51,9 +58,11 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
 
     //mux64_2to1 mToR (.i0(aluResult), .i1(outputMemory), .out(mToROutput), .select(MemToReg));
 
+
     mux64_2to1 aluSCRmux (.i0(d2), .i1(constantVal), .out(bForALU), .select(ALUSrc));
     signExtender daddr9 (.in(insturction[20:12]), .out(DAddr9));
     zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12));
+
 
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
 					 .ReadRegister1(Rn), .ReadRegister2(regout), .WriteRegister(Rd),
