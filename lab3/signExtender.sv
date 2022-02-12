@@ -10,7 +10,7 @@ module signExtender #(parameter SIZE = 9) (addr, out) ;
 	generate
 		genvar j;
 		for (j = SIZE; j < 64; j = j + 1) begin : extension
-			assign out[j] = addr[SIZE -1];
+			assign out[j] = addr[SIZE - 1];
 		end
 	endgenerate
 endmodule
