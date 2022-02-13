@@ -2,6 +2,7 @@
 //ALU file and register file to perform operations based on input instructions
 //and then accessing the memory accordingly. 
 `timescale  1ns/10ps
+
 module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc, ALUOp, zero, negative, overflow, carry_out, Rd, Rm, Rn, result, WriteData) ;
     input logic clk, Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc;
     input logic [2 : 0] ALUOp;
@@ -48,16 +49,21 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     //selecting between b or the constant of either daddr9 or imm12
     mux64_2to1 aluSCRmux (.i0(d2), .i1(constantVal), .out(bForALU), .select(ALUSrc));
 
+
 	//extender and zero extender for daddr9 and imm12
-    signExtender daddr9 (.addr(instruction[20:12]), .out(DAddr9));
-    zeroExtender #(12) imm12(.addr(instruction[21:10]), .out(Imm12));
+    signExtender daddr9 (.in(instruction[20:12]), .out(DAddr9));
+    zeroExtender #(12) imm12(.in(instruction[21:10]), .out(Imm12));
+
 
 	//alu and regfile calls
     regfile rf (.ReadData1(d1), .ReadData2(d2), .WriteData, 
 					 .ReadRegister1(Rn), .ReadRegister2(regData), .WriteRegister(Rd),
 					 .RegWrite, .clk);
                      
+
     alu a1(.A(d1), .B(bForALU), .cntrl(ALUOp), .result(aluOut), .negative, .zero, .overflow, .carry_out);
+
+
    
 	//choosing between lsr result or alu output
     mux64_2to1 shifterOut (.i0(aluOut), .i1(d1_lsr), .out(result), .select(lsrSel));
