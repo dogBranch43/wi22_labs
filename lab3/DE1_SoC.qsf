@@ -668,6 +668,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
+set_global_assignment -name SYSTEMVERILOG_FILE cpu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu/alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE multiplexor2to1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE fullAdder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE D_FF.sv
@@ -676,7 +678,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE controlSignals.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu/nor_in64.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu/math.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu/alu_1bit_slice.sv
-set_global_assignment -name SYSTEMVERILOG_FILE alu/alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decoders/decoder5to32.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decoders/decoder4to16.sv
 set_global_assignment -name SYSTEMVERILOG_FILE decoders/decoder2to4.sv

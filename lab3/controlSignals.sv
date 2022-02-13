@@ -12,9 +12,9 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 	output logic Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, BrTaken, UncondBr, writeEnable;
 	output logic [2:0] ALUOp;
 	//Instructions
-	parameter [10:0] LDUR = 11'b11111000010, ADDI = 11'b1001000100x, B = 11'b000101xxxxx,
-						  SUBS = 11'b11101011000, EOR = 11'b11001010000, CBZ = 11'b10110100xxx, STUR = 11'b11111000000,
-						  ADDS = 11'b10101011000, LSR = 11'b11010011010, AND = 11'b10001010000, BLT = 11'b01010100xxx;
+	parameter [10:0] LDUR = 11'b11111000010, ADDI = 11'b1001000100?, B = 11'b000101?????,
+						  SUBS = 11'b11101011000, EOR = 11'b11001010000, CBZ = 11'b10110100???, STUR = 11'b11111000000,
+						  ADDS = 11'b10101011000, LSR = 11'b11010011010, AND = 11'b10001010000, BLT = 11'b01010100???;
 	//Selecting the correct signals based on the input
 	always_comb begin
 		case(instruction[31:21])
@@ -153,18 +153,31 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										UncondBr  = 1'b0;
 										ALUOp     = 3'b011;
 										writeEnable = 0;
-			 end      
-			 default : begin
-			 Reg2Loc   = 1'b1;
-			                     ALUSrc    = 1'b0;
-			                     MemToReg  = 1'b0;
-			                     MemWrite  = 1'b0;
-										RegWrite  = 1'b0;
-										BrTaken   = 1'b0;
-			                     UncondBr  = 1'bx;
-										ALUOp     = 3'b100;
-										writeEnable = 0;
-			 end
+
+			end
+			default : begin
+										Reg2Loc   = 1'bx;
+						            ALUSrc    = 1'bx;
+				                  MemToReg  = 1'bx;
+		                        MemWrite  = 1'bx;
+                              RegWrite  = 1'bx;
+                              BrTaken   = 1'bx;
+		                        UncondBr  = 1'bx;
+				                  ALUOp     = 3'bxxx;
+			end                 
+   
+// 			 default : begin
+// 			 Reg2Loc   = 1'b1;
+// 			                     ALUSrc    = 1'b0;
+// 			                     MemToReg  = 1'b0;
+// 			                     MemWrite  = 1'b0;
+// 										RegWrite  = 1'b0;
+// 										BrTaken   = 1'b0;
+// 			                     UncondBr  = 1'bx;
+// 										ALUOp     = 3'b100;
+// 										writeEnable = 0;
+// 			 end
+
 		endcase
 		end
 endmodule
