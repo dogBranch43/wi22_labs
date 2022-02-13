@@ -41,10 +41,10 @@ module cpu(clk, rst);
 	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,.ALUOp, // input
 											.zero, .negative, .overflow, .carry_out, .result(ALUResult), .Rd, .Rm, .Rn, .WriteData(writeData)); 								  
 
-	datamem 				dm1 (.address(ALUResult), .write_enable(MemWrite), .read_enable(MemToReg), 
-										.write_data(ALUResult), .clk, .xfer_size(4'b1000), .read_data);
-	
-	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
+//	datamem 				dm1 (.address(ALUResult), .write_enable(MemWrite), .read_enable(MemToReg), 
+//										.write_data(ALUResult), .clk, .xfer_size(4'b1000), .read_data);
+//	
+//	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
 	
 	assign Rd = instruction[4:0];
 	assign Rm = instruction[20:16];
