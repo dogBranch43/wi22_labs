@@ -12,8 +12,18 @@ add wave -noupdate /dataPath_testbench/MemToReg
 add wave -noupdate /dataPath_testbench/ALUOp
 add wave -noupdate /dataPath_testbench/WriteData
 add wave -noupdate /dataPath_testbench/result
+add wave -noupdate /dataPath_testbench/dut/dm1/address
+add wave -noupdate /dataPath_testbench/dut/dm1/write_enable
+add wave -noupdate /dataPath_testbench/dut/dm1/read_enable
+add wave -noupdate /dataPath_testbench/dut/dm1/write_data
+add wave -noupdate /dataPath_testbench/dut/dm1/clk
+add wave -noupdate /dataPath_testbench/dut/dm1/xfer_size
+add wave -noupdate /dataPath_testbench/dut/dm1/read_data
+add wave -noupdate /dataPath_testbench/dut/dm1/aligned_address
+add wave -noupdate /dataPath_testbench/dut/dm1/i
+add wave -noupdate /dataPath_testbench/dut/dm1/j
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {17025354 ps} 0}
+WaveRestoreCursors {{Cursor 1} {11020047 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

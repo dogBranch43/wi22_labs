@@ -23,6 +23,7 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
     logic [4 : 0] regData;
     logic [63 : 0] d1_lsr;
     logic [6 : 0] shamt;
+    logic [63 : 0] read_data;
 
     or #5 (constant, MemToReg, MemWrite);
 	
@@ -67,6 +68,11 @@ module dataPath(clk, instruction, Reg2Loc, RegWrite,  MemWrite, MemToReg, ALUSrc
    
 	//choosing between lsr result or alu output
     mux64_2to1 shifterOut (.i0(aluOut), .i1(d1_lsr), .out(result), .select(lsrSel));
+
+	datamem 				dm1 (.address(result), .write_enable(MemWrite), .read_enable(MemToReg), 
+										.write_data(ALUResult), .clk, .xfer_size(4'b1000), .read_data);
+	
+	mux64_2to1 			m2r (.i0(result), .i1(read_data), .out(writeData), .select(MemToReg)) ;
 endmodule
 
 
