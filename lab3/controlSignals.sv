@@ -5,7 +5,7 @@
 //This is the control signals method
 //Based on the inputed instructions, it will select the correct control signals
 //to be used in the CPU
-`timescale 1ps/1ps
+`timescale 1ns/10ps
 module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc, ALUSrc, MemToReg, RegWrite, MemWrite, writeEnable, BrTaken, UncondBr, ALUOp);
 	input logic [31:0] instruction;
 	input logic zero, negative, carry_out, overflow;
@@ -153,6 +153,7 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 										UncondBr  = 1'b0;
 										ALUOp     = 3'b011;
 										writeEnable = 0;
+
 			end
 			default : begin
 										Reg2Loc   = 1'bx;
@@ -164,6 +165,19 @@ module controlSignals(instruction, zero, negative, overflow, carry_out, Reg2Loc,
 		                        UncondBr  = 1'bx;
 				                  ALUOp     = 3'bxxx;
 			end                 
+   
+// 			 default : begin
+// 			 Reg2Loc   = 1'b1;
+// 			                     ALUSrc    = 1'b0;
+// 			                     MemToReg  = 1'b0;
+// 			                     MemWrite  = 1'b0;
+// 										RegWrite  = 1'b0;
+// 										BrTaken   = 1'b0;
+// 			                     UncondBr  = 1'bx;
+// 										ALUOp     = 3'b100;
+// 										writeEnable = 0;
+// 			 end
+
 		endcase
 		end
 endmodule

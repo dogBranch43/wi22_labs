@@ -1,3 +1,4 @@
+
 // 000:			result = B						value of overflow and carry_out unimportant
 // 010:			result = A + B
 // 011:			result = A - B
@@ -26,10 +27,15 @@ module cpu(clk, rst);
 	logic Reg2Loc, RegWrite, MemWrite, MemToReg, ALUSrc, writeEnable;
 	logic [2:0] 	ALUOp;
 	
+
 //	instructmem 		im1 (.address(PC), .instruction, .clk);
 	
 	assign instruction = 32'b10010001000000000000010000000001;
 	
+
+	//instructmem 		im1 (.address(PC), .instruction, .clk);
+	
+
 	//instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .PC);							// Outputs counter
 	
 	instructionPath 	ip1 (.clk, .BrTaken, .UncondBr, .instruction, .rst);
@@ -41,10 +47,20 @@ module cpu(clk, rst);
 	dataPath				dp1 (.clk, .instruction, .Reg2Loc, .RegWrite,  .MemWrite, .MemToReg, .ALUSrc,.ALUOp, // input
 											.zero, .negative, .overflow, .carry_out, .result(ALUResult), .Rd, .Rm, .Rn, .WriteData(writeData)); 								  
 
+<<<<<<< HEAD
 //	datamem 				dm1 (.address(ALUResult), .write_enable(MemWrite), .read_enable(MemToReg), 
 //										.write_data(ALUResult), .clk, .xfer_size(4'b1000), .read_data);
 //	
 //	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
+=======
+	datamem 				dm1 (.address(ALUResult), .write_enable(MemWrite), .read_enable(MemToReg), 
+
+										.write_data(ALUResult), .clk, .xfer_size(4'b1000), .read_data);
+
+
+	
+	mux64_2to1 			m2r (.i0(ALUResult), .i1(read_data), .out(writeData), .select(MemToReg)) ;
+>>>>>>> 82aa7195990a203d51db27deb3b2036b42904012
 	
 	assign Rd = instruction[4:0];
 	assign Rm = instruction[20:16];
@@ -86,7 +102,11 @@ module cpu_test();
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);
+
 		repeat (200) @(posedge clk);
+
+		@(posedge clk);
+
 		$stop;
 	end
 	
@@ -119,4 +139,4 @@ always_comb begin
 			end
 		endcase
 	end
-*/
+
